@@ -4,15 +4,17 @@ using UnityEngine;
 
 public class LaunchProjectile : Ability {
 
-	public GameObject projectile;
+	public ProjectileName projectileName;
 
-	void Update(){
-		AttemptToShootAbility ();
+	protected override bool shallShoot(){
+		return true;
 	}
 
 	protected override void ShootAbility(){
-		//Debug.Log ("Ability shoted");
-		Instantiate (projectile, transform.position,transform.rotation);
+		var proj = projectilePool.Spawn(projectileName, isPlayer? Side.Player: Side.Enemy);
+		proj.transform.position = transform.position;
+		proj.transform.rotation = transform.rotation;
+		proj.BroadcastMessage ("Init");
 	}
 
 }

@@ -5,10 +5,11 @@ using UnityEngine.UI;
 
 public class Recruit : Control {
 
-	public int credits,craftMax,craftCount;
+	public int credits,craftMax;
+	public int craftCount { get { return craftPool.pools [PoolType.Player].Count; } }
 
 	public void HandleRecruitButtonPressed(){
-		if (main.gamePhase != Phase.Recruit) {
+		if (main.gamePhase != Phase.Recruit || panel.recruitPanel.selectedChoice == null) {
 			return;
 		}
 		var selectedCraft = panel.recruitPanel.selectedAvailableCraft;
@@ -33,9 +34,9 @@ public class Recruit : Control {
 	}
 
 	void OnCraftRecruit(AvailableCraft craft){
-		craftCount++;
 		credits -= craft.cost;
 
+		craftPool.Spawn (craft.craftName, Side.Player);
 		panel.UpdatePanel ();
 	}
 

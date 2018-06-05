@@ -1,13 +1,15 @@
 ﻿using System.Collections;
 using UnityEngine;
 
-public class AvailableCraft : MonoBehaviour {
+public class AvailableCraft : Control {
 
 	public Class craftClass;
 	public Type craftType;
 	public Sprite sprite;
-	public string craftName, description;
+	public CraftName craftName;
+	public string description;
 	public int cost,unlockCost;
-	public bool locked;
+	public bool locked,playerOnly,enemyOnly;
+	public GameObject prefab;
 
 }

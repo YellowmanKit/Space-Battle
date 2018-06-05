@@ -4,19 +4,42 @@ using UnityEngine;
 
 public class Center : MonoBehaviour {
 
+	public static Center instance;
 	public Main main;
-	public Panel panel;
 	public Wave wave;
-	public CustomInput input;
 	public Recruit recruit;
 
-	public Transform availableCraftsTransform;
-	public Dictionary<string, AvailableCraft> availableCrafts = new Dictionary<string, AvailableCraft>();
+	public CraftPool craftPool;
+	public ProjectilePool projectilePool;
+	public ParticlePool particlePool;
 
-	public float time;
+	public Search search;
+	public FleetManage fleetManage;
+
+	public Panel panel;
+	public BattleUI battleUI;
+	public CustomInput input;
+
+
+	public Transform availableCraftsTransform;
+	public Dictionary<CraftName, AvailableCraft> availableCrafts = new Dictionary<CraftName, AvailableCraft>();
+
+	public static float xMin,xMax,yMin,yMax;
+
+	void Awake(){
+		Center.instance = this;
+	}
 
 	void Start(){
+		InitArea ();
 		InitAvailableCrafts ();
+	}
+
+	void InitArea(){
+		Center.xMin = -2.75f;
+		Center.xMax = 2.75f;
+		Center.yMin = -5f;
+		Center.yMax = 5f;
 	}
 
 	void InitAvailableCrafts(){
@@ -27,10 +50,15 @@ public class Center : MonoBehaviour {
 				availableCrafts.Add (availableCraft.craftName, availableCraft);
 			}
 		}
-		panel.recruitPanel.InitRecriutChoices ();
+		panel.recruitPanel.InitRecriutChoices (availableCrafts);
+		craftPool.Init ();
 	}
-	
-	void Update () {
-		time = Time.timeSinceLevelLoad;
+
+	public static bool OutOfArea(Transform transform){
+		return (
+		transform.position.x > Center.xMax
+			|| transform.position.x < Center.xMin
+			|| transform.position.y > Center.yMax
+			|| transform.position.y < Center.yMin);
 	}
 }

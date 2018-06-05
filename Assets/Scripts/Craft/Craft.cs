@@ -18,5 +18,10 @@ public abstract class Craft : Ref {
 
 	protected Rigidbody2D rb { get { return GetComponent<Rigidbody2D> (); } }
 	protected Move move { get { return GetComponent<Move>(); } }
+	protected Hitpoint hitpoint { get { return GetComponent<Hitpoint> (); } }
+	protected State state { get { return GetComponent<State>(); } }
+	protected SpriteRenderer sr { get { return GetComponent<SpriteRenderer>(); } }
+
+	public bool isPlayer { get { return gameObject.tag == "Player"; } }
 
 }

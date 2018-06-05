@@ -9,12 +9,15 @@ public class Move : Craft {
 	float engineForce { get { return rb.mass * accel; } }
 
 	void FixedUpdate(){
-		destination = center.input.target;
+		//destination = center.input.target;
 		Movement ();
 	}
 
 	public bool mLock;
 	void Movement(){
+		if (Center.OutOfArea (transform)) {
+			return;
+		}
 		if (mLock) {
 			destination = (Vector2)transform.position;
 			return;

@@ -37,8 +37,8 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1655036799903992}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -0.002, y: 0.129, z: 0}
-  m_LocalScale: {x: 0.03, y: 0.03, z: 1}
+  m_LocalPosition: {x: 0, y: 2.2, z: 0}
+  m_LocalScale: {x: 0.06, y: 0.06, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
@@ -76,7 +76,7 @@ CapsuleCollider2D:
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}
-  m_Size: {x: 1.5, y: 4.5}
+  m_Size: {x: 1, y: 3}
   m_Direction: 0
 --- !u!114 &114196841715084410
 MonoBehaviour:
@@ -89,8 +89,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 188644362fbe79e4e8e57ddeae195896, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  initSpeed: 5
+  side: 0
+  damage: 5
+  initSpeed: 10
   accel: 0
+  onHitEffect: {fileID: 1906174547866446, guid: 5b2701c435fbd1d45a2dec83dd93778d,
+    type: 2}
 --- !u!212 &212241904847216400
 SpriteRenderer:
   m_ObjectHideFlags: 1
@@ -104,6 +108,7 @@ SpriteRenderer:
   m_MotionVectors: 1
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
+  m_RenderingLayerMask: 4294967295
   m_Materials:
   - {fileID: 10754, guid: 0000000000000000f000000000000000, type: 0}
   m_StaticBatchInfo:
@@ -126,7 +131,7 @@ SpriteRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_Sprite: {fileID: 21300000, guid: c4fcc53106c151b48ba9aac40dc99602, type: 3}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Color: {r: 0.4044118, g: 0.9753549, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0

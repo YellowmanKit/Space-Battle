@@ -1,0 +1,85 @@
+﻿using System.Collections;
+using System.Collections.Generic;
+using UnityEngine;
+
+public enum PoolType {
+	All,
+	Player,
+	Enemy
+}
+
+public enum CraftName {
+	Wasp,
+	Bee,
+	Eagle,
+	Shark,
+	HumpbackWhale
+}
+
+public enum ProjectileName {
+	Bolt
+}
+
+public enum ParticleName {
+	BoltOnHit
+}
+
+public abstract class Pool : Control {
+	
+	public int initAmount;
+	public Transform inactive,players,enemies;
+	public Dictionary<PoolType,List<GameObject>> pools = new Dictionary<PoolType,List<GameObject>>();
+
+	protected void InitPool(){
+		var playerPool = new List<GameObject> ();
+		pools.Add(PoolType.Player,playerPool);
+
+		var enemyPool = new List<GameObject> ();
+		pools.Add(PoolType.Enemy,enemyPool);
+	}
+
+	public GameObject[] prefabs;
+	public void InitByPrefabs(){
+		var allPrefabs = new List<GameObject> ();
+		foreach (GameObject prefab in prefabs) {
+			allPrefabs.AddRange (CreatePool (prefab.name, prefab, initAmount));
+		}
+		pools.Add(PoolType.All,allPrefabs);
+	}
+
+	protected List<GameObject> CreatePool(string name,GameObject prefab,int amount){
+		var prefabs = new List<GameObject> ();
+		var container = new GameObject ().transform;
+		container.SetParent (inactive);
+		container.name = name + "s";
+		for (int i = 0; i < amount; i++) {
+			var newCraft = InstantiateNewPrefab (name, prefab, container);
+			prefabs.Add (newCraft);
+		}
+		return prefabs;
+	}
+
+	protected GameObject InstantiateNewPrefab(string name,GameObject prefab,Transform container){
+		var newPrefab = Instantiate (prefab, container);
+		newPrefab.name = name;
+		newPrefab.SetActive (false);
+		return newPrefab;
+	}
+
+	protected GameObject SpawnFromPool(string prefabName,GameObject prefab,Side side){
+		var container = inactive.Find (prefabName + "s");
+		for (int i = 0; i <= container.childCount; i++) {
+			if (i == container.childCount) {
+				return Wake (InstantiateNewPrefab(prefabName,prefab,container), side);
+			}
+
+			var child = container.GetChild (i).gameObject;
+			if (!child.activeSelf) {
+				return Wake (child, side);
+			}
+		}
+		return null;
+	}
+
+	protected abstract GameObject Wake(GameObject prefab,Side side);
+}

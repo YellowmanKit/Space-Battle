@@ -14,7 +14,7 @@ public class CustomInput : Ref {
 	}
 
 	void GetTargetByTouch(){
-		if (Input.touchCount  == 1 && center.time > nextTouch) {
+		if (Input.touchCount  == 1 && time > nextTouch) {
 			
 			Ray ray = Camera.main.ScreenPointToRay (Input.touches [0].position);
 			RaycastHit2D hit = Physics2D.Raycast (ray.origin, ray.direction, 100f, uiLayer);
@@ -24,12 +24,12 @@ public class CustomInput : Ref {
 				EmitOnclick ();
 			}
 
-			nextTouch = center.time + 0.1f;
+			nextTouch = time + 0.1f;
 		}
 	}
 
 	void GetTargetByClick(){
-		if (Input.GetKey(KeyCode.Mouse0) == true && center.time > nextTouch) {
+		if (Input.GetKey(KeyCode.Mouse0) == true && time > nextTouch) {
 			
 			Ray ray = Camera.main.ScreenPointToRay (Input.mousePosition);
 			RaycastHit2D hit = Physics2D.Raycast (ray.origin, ray.direction, 100f, uiLayer);
@@ -39,7 +39,7 @@ public class CustomInput : Ref {
 				EmitOnclick ();
 			}
 
-			nextTouch = center.time + 0.1f;
+			nextTouch = time + 0.1f;
 		}
 	}
 
