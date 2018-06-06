@@ -7,14 +7,6 @@ public enum Side {
 	Neutral
 }
 
-public enum Position {
-	Front,
-	Middle,
-	Back,
-	HalfFree,
-	Free
-}
-
 public abstract class Behav : Craft {
-
+	
 }

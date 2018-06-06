@@ -20,6 +20,9 @@ public class Hitpoint : Craft {
 	}
 
 	public void TakeDamage(int damage){
+		if (shield != null && !shield.isDown) {
+			return;
+		}
 		hp -= damage;
 		hpBar.nextHide = time + 3f;
 		state.OnHit ();
@@ -28,6 +31,15 @@ public class Hitpoint : Craft {
 		}
 	}
 
+	public void Repaired(int repairValue){
+		if (state.destroyed) {
+			return;
+		}
+		hp += repairValue;
+		hpBar.nextHide = time + 3f;
+		state.OnHit ();
+	}
 
+	public bool isDamaged { get { return hp < hpMax; } }
 
 }

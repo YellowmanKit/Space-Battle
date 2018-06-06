@@ -11,6 +11,9 @@ public enum PoolType {
 public enum CraftName {
 	Wasp,
 	Bee,
+	Beatle,
+	Bat,
+	Pigeon,
 	Eagle,
 	Shark,
 	HumpbackWhale

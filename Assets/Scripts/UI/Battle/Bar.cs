@@ -8,7 +8,7 @@ public class Bar : UI {
 
 	public void InitBar(Hitpoint _hitpoint){
 		hitpoint = _hitpoint;
-		rt.sizeDelta = new Vector2 (40f + hitpoint.hp * 0.25f , 2.5f);
+		rt.sizeDelta = new Vector2 (15f + hitpoint.hp * 0.5f , 2.5f);
 	}
 
 	void Update(){

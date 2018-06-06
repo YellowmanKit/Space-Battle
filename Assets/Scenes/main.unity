@@ -138,6 +138,8 @@ Transform:
   m_LocalPosition: {x: -1.4604856, y: -0.60577637, z: 0.6215097}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
+  - {fileID: 1574468316}
+  - {fileID: 1244987683}
   - {fileID: 361311906}
   - {fileID: 1839784744}
   - {fileID: 2059335533}
@@ -340,7 +342,7 @@ RectTransform:
   m_Children:
   - {fileID: 287146132}
   m_Father: {fileID: 0}
-  m_RootOrder: 1
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
@@ -515,7 +517,7 @@ GameObject:
   - component: {fileID: 224538551}
   - component: {fileID: 224538552}
   m_Layer: 0
-  m_Name: CraftPool
+  m_Name: Crafts
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -545,10 +547,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 224538550}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 34bad56cadbb06842b9ca370537b5b30, type: 3}
+  m_Script: {fileID: 11500000, guid: b190ca22befcd2740a79804ee8e3b63b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  initAmount: 20
+  initAmount: 10
   inactive: {fileID: 1944427010}
   players: {fileID: 1528735846}
   enemies: {fileID: 1709713797}
@@ -684,7 +686,7 @@ Transform:
   - {fileID: 1001299199}
   - {fileID: 1376135830}
   m_Father: {fileID: 0}
-  m_RootOrder: 5
+  m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!224 &306536056 stripped
 RectTransform:
@@ -718,7 +720,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 7746310}
-  m_RootOrder: 3
+  m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &356665773
 MonoBehaviour:
@@ -752,7 +754,7 @@ GameObject:
   - component: {fileID: 361311906}
   - component: {fileID: 361311907}
   m_Layer: 0
-  m_Name: Wasp
+  m_Name: Bat
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -769,7 +771,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 7746310}
-  m_RootOrder: 0
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &361311907
 MonoBehaviour:
@@ -784,15 +786,15 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   craftClass: 1
   craftType: 0
-  sprite: {fileID: 21300000, guid: eb40fef847c2bb849aabac94dcab9362, type: 3}
-  craftName: 0
+  sprite: {fileID: 21300000, guid: 84ab48f17abd6ea4f9369631b29d0d7f, type: 3}
+  craftName: 3
   description: Basic attack unit with the highest strength/cost ratio
   cost: 20
   unlockCost: 0
   locked: 0
   playerOnly: 0
   enemyOnly: 0
-  prefab: {fileID: 1874387004980686, guid: f19fe71226c2e8f4398a87dd4dbf383b, type: 2}
+  prefab: {fileID: 1158933715497410, guid: acb6027d735663c4d914355ab2b0475c, type: 2}
 --- !u!1 &472015850
 GameObject:
   m_ObjectHideFlags: 0
@@ -1101,11 +1103,11 @@ Transform:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 671543132}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: -10}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
-  m_Father: {fileID: 0}
+  m_Father: {fileID: 1059081799}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &696556752
@@ -1311,7 +1313,7 @@ MonoBehaviour:
       m_Calls: []
     m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
-  m_Sprite: {fileID: 21300000, guid: eb40fef847c2bb849aabac94dcab9362, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 84ab48f17abd6ea4f9369631b29d0d7f, type: 3}
   m_Type: 0
   m_PreserveAspect: 1
   m_FillCenter: 1
@@ -1380,7 +1382,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a74b34a8f57997c4dabbda2ff6cc9cc1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  credits: 100
+  credits: 10000
   craftMax: 999
 --- !u!4 &971068073
 Transform:
@@ -1405,7 +1407,7 @@ GameObject:
   - component: {fileID: 1001299199}
   - component: {fileID: 1001299200}
   m_Layer: 0
-  m_Name: ProjectilePool
+  m_Name: Projectiles
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1435,7 +1437,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 1001299198}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 209d546b2facb214a8535af8dbfc1d49, type: 3}
+  m_Script: {fileID: 11500000, guid: baa983f8f4ddcfa43962eaefbd2add40, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   initAmount: 30
@@ -1545,9 +1547,10 @@ Transform:
   m_Children:
   - {fileID: 263759972}
   - {fileID: 1881698505}
+  - {fileID: 671543136}
   - {fileID: 1728559647}
   m_Father: {fileID: 0}
-  m_RootOrder: 4
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1148264871
 GameObject:
@@ -1607,6 +1610,57 @@ MonoBehaviour:
   m_Spacing: {x: 7, y: 7}
   m_Constraint: 0
   m_ConstraintCount: 2
+--- !u!1 &1244987682
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 5
+  m_Component:
+  - component: {fileID: 1244987683}
+  - component: {fileID: 1244987684}
+  m_Layer: 0
+  m_Name: Beatle
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1244987683
+Transform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1244987682}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 7746310}
+  m_RootOrder: 1
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1244987684
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1244987682}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b71848a8b93c0be47809276ef3fcfdc8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  craftClass: 0
+  craftType: 1
+  sprite: {fileID: 21300000, guid: 336b2bfd902c9c244b3196d1cfba1f67, type: 3}
+  craftName: 2
+  description: Basic defense unit with the ability to generate energy shield
+  cost: 20
+  unlockCost: 0
+  locked: 0
+  playerOnly: 0
+  enemyOnly: 0
+  prefab: {fileID: 1257353192698340, guid: 7fae0081371e2594495eae98de43b2c8, type: 2}
 --- !u!1 &1292386487
 GameObject:
   m_ObjectHideFlags: 0
@@ -1739,7 +1793,7 @@ GameObject:
   - component: {fileID: 1376135830}
   - component: {fileID: 1376135831}
   m_Layer: 0
-  m_Name: ParticlePool
+  m_Name: Particles
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1767,7 +1821,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 1376135829}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 6bc9361185ee7d748ae0e6af2b2970d8, type: 3}
+  m_Script: {fileID: 11500000, guid: 2c9fd8828cb187747b99ef117fd38a7a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   initAmount: 10
@@ -1997,6 +2051,57 @@ CanvasRenderer:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1556160782}
+--- !u!1 &1574468315
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 5
+  m_Component:
+  - component: {fileID: 1574468316}
+  - component: {fileID: 1574468317}
+  m_Layer: 0
+  m_Name: Bee
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1574468316
+Transform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1574468315}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 7746310}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1574468317
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1574468315}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b71848a8b93c0be47809276ef3fcfdc8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  craftClass: 0
+  craftType: 2
+  sprite: {fileID: 21300000, guid: 29318d197a60d5d41b673517e8080508, type: 3}
+  craftName: 1
+  description: Basic support unit with the ability to repair ally craft
+  cost: 20
+  unlockCost: 0
+  locked: 0
+  playerOnly: 0
+  enemyOnly: 0
+  prefab: {fileID: 1264527789008358, guid: 7836eefa132810e47900183f98e23738, type: 2}
 --- !u!1 &1633741804
 GameObject:
   m_ObjectHideFlags: 0
@@ -2040,6 +2145,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1661313782}
   - component: {fileID: 1661313783}
+  - component: {fileID: 1661313784}
   m_Layer: 5
   m_Name: Panel
   m_TagString: Untagged
@@ -2091,6 +2197,12 @@ MonoBehaviour:
   - {fileID: 1675544517}
   - {fileID: 1010687499}
   recruitPanel: {fileID: 39645079}
+--- !u!222 &1661313784
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1661313781}
 --- !u!1 &1661831469
 GameObject:
   m_ObjectHideFlags: 0
@@ -2467,7 +2579,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1059081799}
-  m_RootOrder: 2
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1763155689
 GameObject:
@@ -2556,7 +2668,7 @@ RectTransform:
   m_Children:
   - {fileID: 1661313782}
   m_Father: {fileID: 0}
-  m_RootOrder: 0
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
@@ -2573,7 +2685,7 @@ GameObject:
   - component: {fileID: 1839784744}
   - component: {fileID: 1839784745}
   m_Layer: 0
-  m_Name: Bee
+  m_Name: Pigeon
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2590,7 +2702,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 7746310}
-  m_RootOrder: 1
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &1839784745
 MonoBehaviour:
@@ -2605,15 +2717,15 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   craftClass: 1
   craftType: 1
-  sprite: {fileID: 21300000, guid: 04e1986200c37234fafa826eeba933f5, type: 3}
-  craftName: 1
+  sprite: {fileID: 21300000, guid: 77f22d2b30c5d554aa7ece651e860f20, type: 3}
+  craftName: 4
   description: Basic defense unit capable of destroying hostile projectiles
   cost: 15
   unlockCost: 0
   locked: 0
   playerOnly: 0
   enemyOnly: 0
-  prefab: {fileID: 1397078309122274, guid: 7836eefa132810e47900183f98e23738, type: 2}
+  prefab: {fileID: 1888661318268554, guid: 6d9b27cd931e74e42a97101b8b44e3d3, type: 2}
 --- !u!1 &1875181615
 GameObject:
   m_ObjectHideFlags: 0
@@ -7413,48 +7525,6 @@ MonoBehaviour:
   m_FlexibleWidth: -1
   m_FlexibleHeight: 1
   m_LayoutPriority: 1
---- !u!1001 &1898132896
-Prefab:
-  m_ObjectHideFlags: 0
-  serializedVersion: 2
-  m_Modification:
-    m_TransformParent: {fileID: 0}
-    m_Modifications:
-    - target: {fileID: 4125565036682496, guid: 7836eefa132810e47900183f98e23738, type: 2}
-      propertyPath: m_LocalPosition.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4125565036682496, guid: 7836eefa132810e47900183f98e23738, type: 2}
-      propertyPath: m_LocalPosition.y
-      value: -3
-      objectReference: {fileID: 0}
-    - target: {fileID: 4125565036682496, guid: 7836eefa132810e47900183f98e23738, type: 2}
-      propertyPath: m_LocalPosition.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4125565036682496, guid: 7836eefa132810e47900183f98e23738, type: 2}
-      propertyPath: m_LocalRotation.x
-      value: -0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4125565036682496, guid: 7836eefa132810e47900183f98e23738, type: 2}
-      propertyPath: m_LocalRotation.y
-      value: -0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4125565036682496, guid: 7836eefa132810e47900183f98e23738, type: 2}
-      propertyPath: m_LocalRotation.z
-      value: -0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4125565036682496, guid: 7836eefa132810e47900183f98e23738, type: 2}
-      propertyPath: m_LocalRotation.w
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 4125565036682496, guid: 7836eefa132810e47900183f98e23738, type: 2}
-      propertyPath: m_RootOrder
-      value: 6
-      objectReference: {fileID: 0}
-    m_RemovedComponents: []
-  m_ParentPrefab: {fileID: 100100000, guid: 7836eefa132810e47900183f98e23738, type: 2}
-  m_IsPrefabParent: 0
 --- !u!1 &1943892559
 GameObject:
   m_ObjectHideFlags: 0
@@ -7482,7 +7552,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 7746310}
-  m_RootOrder: 4
+  m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &1943892561
 MonoBehaviour:
@@ -7596,7 +7666,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 7746310}
-  m_RootOrder: 2
+  m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &2059335534
 MonoBehaviour:

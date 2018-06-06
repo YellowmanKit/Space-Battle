@@ -12,14 +12,15 @@ public abstract class Ref : MonoBehaviour {
 	protected Panel panel { get { return center.panel; } }
 	protected CustomInput input { get { return center.input; } }
 
-	protected CraftPool craftPool { get { return center.craftPool; } }
-	protected ProjectilePool projectilePool { get { return center.projectilePool; } }
-	protected ParticlePool particlePool { get { return center.particlePool; } }
+	protected Crafts craftPool { get { return center.craftPool; } }
+	protected Projectiles projectilePool { get { return center.projectilePool; } }
+	protected Particles particlePool { get { return center.particlePool; } }
 
 	protected Search search { get { return center.search; } }
 	protected FleetManage fleetManage { get { return center.fleetManage; } }
 
 	protected int uiLayer { get { return 1 << 5; } }
 	protected float time { get { return Time.timeSinceLevelLoad; } }
+	protected float deltaTime { get { return Time.deltaTime; } }
 
 }

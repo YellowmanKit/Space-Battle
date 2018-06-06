@@ -9,9 +9,9 @@ public class Center : MonoBehaviour {
 	public Wave wave;
 	public Recruit recruit;
 
-	public CraftPool craftPool;
-	public ProjectilePool projectilePool;
-	public ParticlePool particlePool;
+	public Crafts craftPool;
+	public Projectiles projectilePool;
+	public Particles particlePool;
 
 	public Search search;
 	public FleetManage fleetManage;

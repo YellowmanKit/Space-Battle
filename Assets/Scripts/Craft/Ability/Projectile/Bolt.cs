@@ -21,7 +21,7 @@ public class Bolt : Projectile {
 	}
 
 	void OnTriggerEnter2D(Collider2D other){
-		if (IsHitted (other.tag)) {
+		if (OnHit (other)) {
 			SpawnOnHitEffect ();
 			DealDamage (other);
 			SelfDestruct ();
@@ -29,11 +29,12 @@ public class Bolt : Projectile {
 	}
 
 	void DealDamage(Collider2D other){
-		other.GetComponent<Hitpoint> ().TakeDamage (damage);
+		other.gameObject.SendMessage("TakeDamage",damage);
 		hitted = true;
 	}
 
-	bool IsHitted(string tag){
+	bool OnHit(Collider2D other){
+		var tag = other.tag == "Shield"? other.transform.parent.tag: other.tag;
 		return (
 			!hitted && 
 			((gameObject.tag == "PlayerProjectile" && tag == "Enemy") ||

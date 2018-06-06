@@ -5,8 +5,9 @@ using UnityEngine;
 public class Pilot : Behav {
 
 	public Side side;
-	public Position position;
 	public float moveCd,variation;
+	public bool backWhenShieldDown;
+
 	float randomize { get { return Random.Range (-variation, variation); } }
 
 	void OnEnable () {
@@ -18,7 +19,7 @@ public class Pilot : Behav {
 		transform.rotation = Quaternion.Euler (new Vector3 (0f, 0f, side == Side.Enemy? 180f:0f));
 	}
 	
-	Transform target;
+	public Transform target;
 	void Update(){
 		SearchForTarget ();
 		Destination ();
@@ -27,39 +28,31 @@ public class Pilot : Behav {
 	void SearchForTarget(){
 		if (target == null || !target.gameObject.activeSelf) {
 			target = search.FindClosestTarget (transform, isPlayer? Side.Enemy : Side.Player);
+			yFree = false;
 		}
 	}
 
+	public float backDistance;
+	public bool yFree;
+	float distanceFromFrontline { get { return side == Side.Enemy ? backDistance : -backDistance; } }
+	float yPosition { get { return (backWhenShieldDown && shield != null && shield.isDown)? isPlayer? Center.yMin: Center.yMax : Random.Range (distanceFromFrontline - 0.5f, distanceFromFrontline + 0.5f); } }
 	float nextMove;
 	void Destination(){
 		if (time < nextMove) {
 			return;
 		}
-		nextMove = time + moveCd;
 
 		if (target != null && target.gameObject.activeSelf) {
-			move.destination = new Vector2 (target.position.x + randomize, Random.Range(yMin,yMax));
+			move.destination = new Vector2 (target.position.x + randomize, yFree? target.position.y + randomize: yPosition);
+			nextMove = time + moveCd;
 		} else {
 			SetRandomDestination ();
+			nextMove = time + 0.05f;
 		}
 	}
 
-	float yMax { get { return 
-			position == Position.Front ? (side == Side.Player ? -0.5f : 2f) : 
-			position == Position.Middle ? (side == Side.Player ? -2f : 3.5f) : 
-			position == Position.Back ? (side == Side.Player ? -3.5f : 5f) : 
-			position == Position.HalfFree ? (side == Side.Player ? 0f : Center.yMax) : 
-			position == Position.Free ? Center.yMax : 0f; } }
-	
-	float yMin { get { return 
-			position == Position.Front? (side == Side.Player? -2f: 0.5f) : 
-			position == Position.Middle? (side == Side.Player? -3.5f: 2f): 
-			position == Position.Back? (side == Side.Player? -5f: 3.5f): 
-			position == Position.HalfFree ? (side == Side.Player ? Center.yMin : 0f) : 
-			position == Position.Free ? Center.yMin : 0f; } }
-
 	void SetRandomDestination(){
-		move.destination = new Vector2 (Random.Range(Center.xMin,Center.xMax), Random.Range(yMin,yMax));
+		move.destination = new Vector2 (Random.Range(Center.xMin,Center.xMax), yPosition);
 	}
 
 	public void PrewarmAbility(){
