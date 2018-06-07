@@ -638,6 +638,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   barPrefab: {fileID: 1255956437427184, guid: b1b0f6ffa4d177b4fa56e45cb4243349, type: 2}
   hitpointIndicators: {fileID: 1878105153}
+  fps: {fileID: 889576641}
 --- !u!224 &287146132
 RectTransform:
   m_ObjectHideFlags: 0
@@ -649,6 +650,7 @@ RectTransform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 1878105153}
+  - {fileID: 889576640}
   m_Father: {fileID: 74155492}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -1178,6 +1180,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   gamePhase: 0
+  timeScale: 0.5
 --- !u!4 &716970607
 Transform:
   m_ObjectHideFlags: 0
@@ -1327,6 +1330,80 @@ CanvasRenderer:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 858468997}
+--- !u!1 &889576639
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 5
+  m_Component:
+  - component: {fileID: 889576640}
+  - component: {fileID: 889576642}
+  - component: {fileID: 889576641}
+  m_Layer: 5
+  m_Name: fps
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &889576640
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 889576639}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 287146132}
+  m_RootOrder: 1
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0, y: 1}
+  m_AnchorMax: {x: 0, y: 1}
+  m_AnchoredPosition: {x: 15, y: -5}
+  m_SizeDelta: {x: 150, y: 150}
+  m_Pivot: {x: 0, y: 1}
+--- !u!114 &889576641
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 889576639}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 708705254, guid: f70555f144d8491a825f0804e09c671c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 0}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_RaycastTarget: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+    m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
+      Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+  m_FontData:
+    m_Font: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
+    m_FontSize: 45
+    m_FontStyle: 0
+    m_BestFit: 0
+    m_MinSize: 3
+    m_MaxSize: 105
+    m_Alignment: 0
+    m_AlignByGeometry: 0
+    m_RichText: 1
+    m_HorizontalOverflow: 0
+    m_VerticalOverflow: 0
+    m_LineSpacing: 1
+  m_Text: fps
+--- !u!222 &889576642
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 889576639}
 --- !u!1 &907674200
 GameObject:
   m_ObjectHideFlags: 0
@@ -1446,6 +1523,7 @@ MonoBehaviour:
   enemies: {fileID: 184726819}
   prefabs:
   - {fileID: 1655036799903992, guid: ef82f322d3cb4d0439624bfab958e1cb, type: 2}
+  - {fileID: 1595626645136202, guid: 4fe97845be7b3a64689fea0542cea550, type: 2}
 --- !u!1 &1010687497
 GameObject:
   m_ObjectHideFlags: 0
@@ -1830,6 +1908,7 @@ MonoBehaviour:
   enemies: {fileID: 0}
   prefabs:
   - {fileID: 1409038382244648, guid: 6923c811e85c73a4b93fa419d207cdcd, type: 2}
+  - {fileID: 1345939127131678, guid: 731fb24707fab1f46b75b170e8792be1, type: 2}
 --- !u!1 &1480350285
 GameObject:
   m_ObjectHideFlags: 0
@@ -7654,7 +7733,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &2059335533
 Transform:
   m_ObjectHideFlags: 0
@@ -7681,12 +7760,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   craftClass: 1
   craftType: 0
-  sprite: {fileID: 21300000, guid: 1623ab3af4b097d448412ecb1d99c2db, type: 3}
-  craftName: 0
+  sprite: {fileID: 21300000, guid: 139c2bd02af25424f82c9532eca2cafd, type: 3}
+  craftName: 5
   description: Advanced attack unit with greater fire power and durability
   cost: 50
-  unlockCost: 100
-  locked: 1
+  unlockCost: 0
+  locked: 0
   playerOnly: 0
   enemyOnly: 0
-  prefab: {fileID: 0}
+  prefab: {fileID: 1876243523141846, guid: f46b531dcf598d244849ad3763c95d73, type: 2}

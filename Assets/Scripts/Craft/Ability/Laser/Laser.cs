@@ -10,7 +10,7 @@ public abstract class Laser : Ability {
 
 	float nextCheck;
 	protected abstract bool checkCondition();
-	protected override bool shallShoot(){
+	protected override bool shallUse(){
 		if (time < nextCheck) {
 			return false;
 		}
@@ -19,11 +19,15 @@ public abstract class Laser : Ability {
 	}
 
 	protected abstract void ShootLaser();
-	protected override void ShootAbility(){
+	protected override void UseAbility(){
 		ShootLaser ();
 	}
 
 	protected Line laserLine { get { return GetComponentInChildren<Line> (); } }
 	protected Pilot pilot { get { return GetComponentInParent<Pilot> (); } }
+
+	void FixedUpdate(){
+		AbilityUpdate ();
+	}
 
 }

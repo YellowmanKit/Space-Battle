@@ -8,14 +8,13 @@ public class Shield : Alpha {
 	CircleCollider2D shieldCollider { get { return GetComponent<CircleCollider2D> (); } }
 
 	void OnEnable(){
-		Init ();
-	}
-
-	void Init(){
-		shieldHp = shieldHpMax;
+		Recharge ();
 	}
 
 	void Prewarm(){
+	}
+
+	void Recharge(){
 		shieldHp = shieldHpMax;
 	}
 
@@ -28,7 +27,6 @@ public class Shield : Alpha {
 		if (isDown) {
 			shieldCollider.enabled = false;
 		}
-		hpBar.nextHide = time + 3f;
 		OnHit ();
 	}
 
@@ -44,7 +42,7 @@ public class Shield : Alpha {
 	}
 
 	protected override float targetAlpha (){
-		return !isDown? 0.1f: 0f;
+		return !isDown? 0.05f: 0f;
 	}
 
 	protected override void OnAlphaZero (){

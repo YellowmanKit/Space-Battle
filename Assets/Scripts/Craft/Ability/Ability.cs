@@ -4,8 +4,9 @@ using UnityEngine;
 public abstract class Ability : Ref {
 
 	public float coolDown,prewarm,variation;
-	protected float nextShot;
+	protected float nextUse;
 	protected bool craftIsDestroyed { get { return GetComponentInParent<State> ().destroyed; } }
+	protected Rigidbody2D rb { get { return GetComponentInParent<Rigidbody2D> (); } }
 
 	float randomize { get { return Random.Range (-variation, variation); } }
 
@@ -14,23 +15,23 @@ public abstract class Ability : Ref {
 	}
 
 	void Prewarm(){
-		nextShot = time + prewarm + randomize;
+		nextUse = time + prewarm + randomize;
 	}
 
-	void Update(){
+	protected void AbilityUpdate(){
 		AttemptToShootAbility ();
 	}
 
 	public bool isPlayer { get { return transform.parent.tag == "Player"; } }
-	bool canShoot { get { return !craftIsDestroyed && time > nextShot && ((isPlayer && fleetManage.enemyExist) || (!isPlayer && fleetManage.playerExist)); } }
-	protected abstract bool shallShoot();
+	bool canUse { get { return !craftIsDestroyed && time > nextUse && ((isPlayer && fleetManage.enemyExist) || (!isPlayer && fleetManage.playerExist)); } }
+	protected abstract bool shallUse();
 
-	protected abstract void ShootAbility();
+	protected abstract void UseAbility();
 
 	void AttemptToShootAbility(){
-		if (canShoot && shallShoot()) {
-			nextShot = time + coolDown + randomize;
-			ShootAbility ();
+		if (canUse && shallUse()) {
+			nextUse = time + Mathf.Clamp(coolDown + randomize, 0.02f, float.MaxValue);
+			UseAbility ();
 		}
 	}
 

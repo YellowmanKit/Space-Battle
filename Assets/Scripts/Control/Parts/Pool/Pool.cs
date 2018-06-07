@@ -20,11 +20,13 @@ public enum CraftName {
 }
 
 public enum ProjectileName {
-	Bolt
+	Bolt,
+	Bullet
 }
 
 public enum ParticleName {
-	BoltOnHit
+	BoltOnHit,
+	BulletOnHit
 }
 
 public abstract class Pool : Control {

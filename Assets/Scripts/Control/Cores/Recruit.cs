@@ -37,6 +37,7 @@ public class Recruit : Control {
 		credits -= craft.cost;
 
 		craftPool.Spawn (craft.craftName, Side.Player);
+		fleetManage.SetFormation (Side.Player);
 		panel.UpdatePanel ();
 	}
 

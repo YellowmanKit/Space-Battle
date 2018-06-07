@@ -5,6 +5,7 @@ using UnityEngine;
 public class State : Alpha {
 
 	public Class craftClass;
+	public CraftName craftName;
 	public bool destroyed;
 
 	void OnEnable(){

@@ -16,6 +16,7 @@ public class Pilot : Behav {
 
 	void Init(){
 		gameObject.tag = side.ToString ();
+		transform.position = new Vector3 (Random.Range (Center.xMin, Center.xMax), isPlayer ? Center.yMin - (backDistance + randomize) : Center.yMax + (backDistance + randomize), 0f);
 		transform.rotation = Quaternion.Euler (new Vector3 (0f, 0f, side == Side.Enemy? 180f:0f));
 	}
 	
@@ -35,24 +36,24 @@ public class Pilot : Behav {
 	public float backDistance;
 	public bool yFree;
 	float distanceFromFrontline { get { return side == Side.Enemy ? backDistance : -backDistance; } }
-	float yPosition { get { return (backWhenShieldDown && shield != null && shield.isDown)? isPlayer? Center.yMin: Center.yMax : Random.Range (distanceFromFrontline - 0.5f, distanceFromFrontline + 0.5f); } }
+	float yPosition { get { return (backWhenShieldDown && shield != null && shield.isDown)? isPlayer? Center.yMin + 0.5f: Center.yMax - 0.5f : Random.Range (distanceFromFrontline - 0.5f, distanceFromFrontline + 0.5f); } }
 	float nextMove;
 	void Destination(){
 		if (time < nextMove) {
 			return;
 		}
+		nextMove = time + moveCd;
 
 		if (target != null && target.gameObject.activeSelf) {
 			move.destination = new Vector2 (target.position.x + randomize, yFree? target.position.y + randomize: yPosition);
-			nextMove = time + moveCd;
 		} else {
-			SetRandomDestination ();
-			nextMove = time + 0.05f;
+			SetFormationDestination ();
 		}
 	}
 
-	void SetRandomDestination(){
-		move.destination = new Vector2 (Random.Range(Center.xMin,Center.xMax), yPosition);
+	public float formationX;
+	void SetFormationDestination(){
+		move.destination = new Vector2 (formationX + randomize, yPosition);
 	}
 
 	public void PrewarmAbility(){

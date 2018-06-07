@@ -18,9 +18,11 @@ public abstract class Projectile : Ref {
 		projectilePool.Destroyed (gameObject);
 	}
 
+	protected bool repelled;
+	float multiplier { get { return repelled ? -1f : 1f; } }
 	protected void SpawnOnHitEffect(){
 		var onhit = particlePool.Spawn(particleName);
-		onhit.Init (transform.position, Quaternion.Euler (new Vector3 (gameObject.tag == "PlayerProjectile" ? -90f : 90f, 0f, 0f)), 0.5f);
+		onhit.Init (transform.position, Quaternion.Euler (new Vector3 (gameObject.tag == "PlayerProjectile" ? -90f * multiplier : 90f * multiplier, 0f, 0f)), 0.5f);
 	}
 
 }

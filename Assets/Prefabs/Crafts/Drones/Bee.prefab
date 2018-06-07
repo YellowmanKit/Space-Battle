@@ -258,8 +258,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   craftClass: 0
+  craftName: 1
   destroyed: 0
-  rotate: 0
 --- !u!114 &114364756186246166
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -287,7 +287,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   maxSpeed: 4
-  accel: 4
+  accel: 2
   breakDistance: 2
   breakFactor: 0.95
   destination: {x: 0, y: 0}
@@ -323,9 +323,11 @@ MonoBehaviour:
   side: 0
   moveCd: 0.25
   variation: 0.5
+  backWhenShieldDown: 0
   target: {fileID: 0}
   backDistance: 3
   yFree: 0
+  formationX: 0
 --- !u!114 &114999399321770752
 MonoBehaviour:
   m_ObjectHideFlags: 1

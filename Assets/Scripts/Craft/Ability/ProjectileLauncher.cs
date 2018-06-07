@@ -6,15 +6,49 @@ public class ProjectileLauncher : Ability {
 
 	public ProjectileName projectileName;
 
-	protected override bool shallShoot(){
+	protected override bool shallUse(){
 		return true;
 	}
 
-	protected override void ShootAbility(){
+	public int amountPreUse;
+	float nextShoot;
+	protected override void UseAbility(){
+		amountToShoot += amountPreUse;
+		nextShoot = time;
+	}
+
+	void FixedUpdate(){
+		AbilityUpdate ();
+		Shooting ();
+	}
+
+	public float shootSeperation;
+	int amountToShoot;
+	void Shooting(){
+		if (amountToShoot > 0 && time > nextShoot) {
+			ShootProjectile ();
+			nextShoot = time + shootSeperation;
+			amountToShoot--;
+		}
+	}
+		
+	public Vector2[] shotSpawns;
+	int count;
+	void ShootProjectile(){
 		var proj = projectilePool.Spawn(projectileName, isPlayer? Side.Player: Side.Enemy);
-		proj.transform.position = transform.position;
+		proj.transform.position = new Vector3 (transform.position.x + shotSpawns [count].x , transform.position.y + shotSpawns [count].y, 0f);
 		proj.transform.rotation = transform.rotation;
 		proj.BroadcastMessage ("Init");
+		count = (count + 1) % shotSpawns.Length;
+
+		ForceOnShoot ();
+	}
+
+	public Vector2 shootAccel;
+	float xForce { get { return rb.mass * shootAccel.x; } }
+	float yForce { get { return rb.mass * shootAccel.y; } }
+	void ForceOnShoot(){
+		rb.AddForce (new Vector2 (xForce, yForce));
 	}
 
 }

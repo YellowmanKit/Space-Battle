@@ -34,6 +34,7 @@ public class Bolt : Projectile {
 	}
 
 	bool OnHit(Collider2D other){
+		repelled = other.tag == "Shield" ? true : false;
 		var tag = other.tag == "Shield"? other.transform.parent.tag: other.tag;
 		return (
 			!hitted && 
@@ -43,6 +44,7 @@ public class Bolt : Projectile {
 	}
 
 	public void Intercepted(){
+		repelled = false;
 		SpawnOnHitEffect ();
 		SelfDestruct ();
 	}

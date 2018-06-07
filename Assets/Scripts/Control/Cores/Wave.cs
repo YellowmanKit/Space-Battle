@@ -9,13 +9,15 @@ public class Wave : Control {
 		PlayerFleetPrewarm ();
 		waveCount++;
 		for (int i = 0; i < 5 * waveCount; i++) {
-			center.craftPool.Spawn (CraftName.Bat, Side.Enemy);
+			craftPool.Spawn (CraftName.Bat, Side.Enemy);
 		}
 		for (int i = 0; i < (int)Mathf.Floor((waveCount / 2)); i++) {
-			center.craftPool.Spawn (CraftName.Pigeon, Side.Enemy);
+			craftPool.Spawn (CraftName.Beatle, Side.Enemy);
+			craftPool.Spawn (CraftName.Pigeon, Side.Enemy);
 		}
 		for (int i = 0; i < (int)Mathf.Floor((waveCount / 3)); i++) {
-			center.craftPool.Spawn (CraftName.Bee, Side.Enemy);
+			craftPool.Spawn (CraftName.Bee, Side.Enemy);
+			craftPool.Spawn (CraftName.Eagle, Side.Enemy);
 		}
 	}
 
@@ -25,6 +27,8 @@ public class Wave : Control {
 
 	public void WaveCleared(){
 		recruit.credits += 50 * waveCount;
+		fleetManage.RechargeFleet (craftPool.pools [PoolType.Player]);
+		fleetManage.SetFormation (Side.Player);
 		main.SetPhase (Phase.Recruit);
 	}
 

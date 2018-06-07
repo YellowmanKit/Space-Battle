@@ -14,4 +14,8 @@ public abstract class Control : Ref {
 		return side == Side.Enemy ? PoolType.Enemy : PoolType.Player;
 	}
 
+	protected CraftName StringToCraftName(string name){
+		return (CraftName)System.Enum.Parse (typeof(CraftName), name);
+	}
+
 }

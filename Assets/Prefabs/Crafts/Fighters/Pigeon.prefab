@@ -246,8 +246,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   craftClass: 1
+  craftName: 4
   destroyed: 0
-  rotate: 0
 --- !u!114 &114141540875186338
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -286,8 +286,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 410bf89c43670044dbe9eaedf015eef8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  maxSpeed: 2
-  accel: 1
+  maxSpeed: 1.5
+  accel: 0.75
   breakDistance: 1.5
   breakFactor: 0.95
   destination: {x: 0, y: 0}
@@ -306,9 +306,11 @@ MonoBehaviour:
   side: 0
   moveCd: 0.5
   variation: 0.5
+  backWhenShieldDown: 0
   target: {fileID: 0}
   backDistance: 2
   yFree: 0
+  formationX: 0
 --- !u!114 &114705667865433890
 MonoBehaviour:
   m_ObjectHideFlags: 1

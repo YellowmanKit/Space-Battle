@@ -6,6 +6,7 @@ using UnityEngine.SceneManagement;
 public class Main : Control {
 
 	public Phase gamePhase;
+	public float timeScale;
 
 	public void Start(){
 		SetPhase (Phase.Entry);
@@ -14,6 +15,9 @@ public class Main : Control {
 	void Update(){
 		if(Input.GetKey(KeyCode.Escape)){
 			SceneManager.LoadScene ("main");
+		}
+		if(Input.GetKey(KeyCode.Space)){
+			Time.timeScale = timeScale;
 		}
 	}
 
