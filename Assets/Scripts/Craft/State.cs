@@ -10,15 +10,26 @@ public class State : Alpha {
 
 	void OnEnable(){
 		InitState ();
+		InitEngine ();
+		InitLayer ();
 	}
 
 	void InitState(){
 		SetAlpha (1f);
 		destroyed = false;
+		engine.gameObject.SetActive (true);
+	}
+
+	void InitLayer(){
+		var layer = LayerMask.NameToLayer (pilot.side.ToString() + state.craftClass.ToString ());
+		if (layer != -1) {
+			gameObject.layer = layer;
+		}
 	}
 
 	public void CraftDestroyed(){
 		destroyed = true;
+		engine.gameObject.SetActive (false);
 	}
 
 	public void OnHit(){
@@ -33,11 +44,25 @@ public class State : Alpha {
 	}
 
 	protected override float targetAlpha (){
-		return main.gamePhase == Phase.Recruit? 0.5f: state.destroyed ? 0f : 1f;
+		return destroyed ? 0f : main.gamePhase == Phase.Recruit? 0.5f: 1f;
 	}
 
 	protected override void OnAlphaZero(){
 		gameObject.SetActive (false);
 		craftPool.Destroyed (gameObject);
 	}
+
+	Transform engine { get { return transform.Find ("Engine"); } }
+	ParticleSystem[] engineParticles { get { return engine.GetComponentsInChildren<ParticleSystem> (); } }
+	void InitEngine(){
+		SetParticleMain(engineParticles);
+	}
+
+	void SetParticleMain(ParticleSystem[] psArray){
+		foreach(ParticleSystem ps in psArray){
+			var psMain = ps.main;
+			psMain.startRotation = (isPlayer? 0f:180f) * Mathf.Deg2Rad;
+		}
+	}
+
 }

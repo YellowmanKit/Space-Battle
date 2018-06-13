@@ -16,25 +16,49 @@ public class Repair : Laser {
 		if (targetExist && targetNeedRepair) {
 			return true;
 		}
-		foreach (GameObject craft in targetList) {
-			if (craft.GetComponent<Hitpoint>().isDamaged) {
-				target = craft;
-				pilot.target = craft.transform;
-				pilot.yFree = true;
-				return true;
-			}
+		if (targetList.Count <= 1) {
+			return false;
 		}
-		target = null;
-		pilot.target = null;
-		pilot.yFree = false;
-		return false;
+
+		GameObject closestTarget = null;
+		var index = targetList.IndexOf (transform.parent.gameObject) - 1;
+		var value = 2;
+		for (int i = 0; i < targetList.Count * 2; i++) {
+			if (index < 0 || index > targetList.Count - 1) {
+				index += value;
+				value = (value + 1) * -1;
+				continue;
+			}
+			if (targetList [index].GetComponent<Hitpoint> ().isDamaged) {
+				closestTarget = targetList [index];
+				break;
+			}
+			index += value;
+			value = (value + 1) * -1;
+		}
+
+		if (closestTarget != null) {
+			var targetClass = closestTarget.GetComponent<State> ().craftClass;
+			laserVariation = targetClass == Class.Battleship ? 0.25f : targetClass == Class.Cruiser ? 0.05f : 0.01f;
+			bonusRange = targetClass == Class.Battleship ? 0.5f : targetClass == Class.Cruiser ? 0.1f : 0f;
+
+			target = closestTarget;
+			pilot.target = closestTarget.transform;
+			pilot.yFree = true;
+			return true;
+		} else {
+			target = null;
+			pilot.target = null;
+			pilot.yFree = false;
+			return false;
+		}
 	}
 
 	public int repairValue;
-	public float laserVariation;
+	float laserVariation,bonusRange;
 	float randomize { get { return Random.Range (-laserVariation, laserVariation); } } 
 	protected override void ShootLaser(){
-		if (Vector3.Distance (transform.position, target.transform.position) <= range) {
+		if (Vector3.Distance (transform.position, target.transform.position) <= (range + bonusRange)) {
 			laserLine.SetLine (transform.position, new Vector3(target.transform.position.x + randomize,target.transform.position.y + randomize, 0f));
 			target.BroadcastMessage ("Repaired", repairValue);
 		}

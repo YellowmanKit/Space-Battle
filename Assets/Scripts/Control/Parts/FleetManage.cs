@@ -22,18 +22,18 @@ public class FleetManage : Control {
 		}
 	}
 
+	float randomize { get { return Random.Range (-0.1f, 0.1f); } }
 	public void SetFormation(Side side){
-
 		foreach (KeyValuePair<CraftName,List<GameObject>> pair in craftPool.craftsList[side]) {
 			if (pair.Value.Count == 0) {
 				continue;
 			}
 			Class craftClass = pair.Value [0].GetComponent<State> ().craftClass;
-			float space = craftClass == Class.Drone ? 0.25f : craftClass == Class.Fighter ? 0.5f : craftClass == Class.Cruiser ? 0.75f : craftClass == Class.Battleship ? 2f : 1f;
+			float space = craftClass == Class.Drone ? 0.25f : craftClass == Class.Fighter ? 0.5f : craftClass == Class.Cruiser ? 1f : craftClass == Class.Battleship ? 2f : 1f;
 			float occupied = 0f;
 			float multiplier = 0f;
 			foreach (GameObject craft in pair.Value) {
-				float xPosi = Mathf.Ceil(occupied / 2f) * multiplier * space;
+				float xPosi = Mathf.Ceil(occupied / 2f) * multiplier * (space + randomize);
 				if (xPosi > Center.xMax || xPosi < Center.xMin) {
 					xPosi = 0f;
 					occupied = 0f;

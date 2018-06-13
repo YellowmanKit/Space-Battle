@@ -15,6 +15,9 @@ public class Panel : UI {
 		case "Recruit":
 			recruit.HandleRecruitButtonPressed ();
 			break;
+		case "Dismiss":
+			recruit.HandleDismissButtonPressed ();
+			break;
 		case "Bot":
 			main.HandleBotButtonPressed ();
 			break;

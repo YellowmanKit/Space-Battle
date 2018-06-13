@@ -20,14 +20,15 @@ public class Projectiles : Pool {
 	protected override GameObject Wake(GameObject projectile,Side side){
 		pools [SideToPoolType(side)].Add (projectile);
 		projectile.transform.SetParent (side == Side.Enemy ? enemies : players);
-		projectile.tag = side.ToString() + "Projectile";
+		//projectile.tag = side.ToString() + "Projectile";
 		projectile.SetActive (true);
 
 		return projectile;
 	}
 
-	public void Destroyed(GameObject projectile){
-		var side = projectile.tag == "PlayerProjectile"? Side.Player:Side.Enemy;
+	public void Destroyed(GameObject projectile, bool isPlayerProjectile){
+		//var side = projectile.tag == "PlayerProjectile"? Side.Player:Side.Enemy;
+		var side = isPlayerProjectile? Side.Player:Side.Enemy;
 		pools [SideToPoolType (side)].Remove (projectile);
 		projectile.transform.SetParent (inactive.Find(projectile.name + "s"));
 	}

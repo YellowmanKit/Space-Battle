@@ -7,7 +7,7 @@ public abstract class Alpha : Craft {
 	protected abstract float targetAlpha ();
 	protected abstract void OnAlphaZero ();
 	float currentAlpha { get { return sr.color.a; } }
-	float minDelta = 0.05f;
+	float minDelta = 0.01f;
 
 	protected void AlphaUpdate(){
 		var delta = (targetAlpha() - currentAlpha) * 0.1f;

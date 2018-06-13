@@ -33,11 +33,11 @@ public class Crafts : Pool {
 		pools [SideToPoolType(side)].Add (craft);
 
 		craft.GetComponent<Pilot> ().side = side;
+		//craft.tag = side.ToString ();
 		craft.transform.position = new Vector3 (Random.Range (Center.xMin, Center.xMax), side == Side.Enemy ? Center.yMax + 0.5f : Center.yMin - 0.5f, 0f);
 
 		craft.transform.SetParent (side == Side.Enemy ? enemies : players);
 		craft.SetActive (true);
-
 
 		var craftName = StringToCraftName (craft.name);
 		if(!craftsList [side].ContainsKey(craftName)){
@@ -61,7 +61,7 @@ public class Crafts : Pool {
 		if (!fleetManage.enemyExist) {
 			wave.WaveCleared ();
 		}
-		if (!fleetManage.playerExist) {
+		if (main.gamePhase == Phase.Battle && !fleetManage.playerExist) {
 			fleetManage.SetFormation (Side.Enemy);
 			main.GameOver ();
 		}

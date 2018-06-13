@@ -31,14 +31,17 @@ public class ProjectileLauncher : Ability {
 			amountToShoot--;
 		}
 	}
-		
+
 	public Vector2[] shotSpawns;
 	int count;
 	void ShootProjectile(){
 		var proj = projectilePool.Spawn(projectileName, isPlayer? Side.Player: Side.Enemy);
-		proj.transform.position = new Vector3 (transform.position.x + shotSpawns [count].x , transform.position.y + shotSpawns [count].y, 0f);
+		var localScale = transform.parent.localScale;
+		proj.transform.position = transform.position;
+		proj.transform.Translate (new Vector2(shotSpawns [count].x * localScale.x, shotSpawns [count].y * localScale.y));
+
 		proj.transform.rotation = transform.rotation;
-		proj.BroadcastMessage ("Init");
+		proj.BroadcastMessage ("Init",isPlayer);
 		count = (count + 1) % shotSpawns.Length;
 
 		ForceOnShoot ();
@@ -48,7 +51,7 @@ public class ProjectileLauncher : Ability {
 	float xForce { get { return rb.mass * shootAccel.x; } }
 	float yForce { get { return rb.mass * shootAccel.y; } }
 	void ForceOnShoot(){
-		rb.AddForce (new Vector2 (xForce, yForce));
+		rb.AddRelativeForce (new Vector2 (xForce, yForce));
 	}
 
 }

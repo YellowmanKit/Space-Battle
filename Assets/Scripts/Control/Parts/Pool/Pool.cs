@@ -15,18 +15,22 @@ public enum CraftName {
 	Bat,
 	Pigeon,
 	Eagle,
+	Eel,
+	Dolphin,
 	Shark,
 	HumpbackWhale
 }
 
 public enum ProjectileName {
 	Bolt,
-	Bullet
+	Bullet,
+	Rocket
 }
 
 public enum ParticleName {
 	BoltOnHit,
-	BulletOnHit
+	BulletOnHit,
+	RocketOnHit
 }
 
 public abstract class Pool : Control {
@@ -84,6 +88,18 @@ public abstract class Pool : Control {
 			}
 		}
 		return null;
+	}
+
+	Dictionary<string,int> particleCount = new Dictionary<string,int>();
+	protected GameObject SpawnParticleFromPool(string prefabName,GameObject prefab,Side side){
+		if (!particleCount.ContainsKey (prefabName)) {
+			particleCount.Add (prefabName, 0);
+		}
+		var count = particleCount [prefabName];
+
+		var container = inactive.Find (prefabName + "s");
+		particleCount [prefabName] = (count + 1) % container.childCount;
+		return Wake (container.GetChild (count).gameObject,side);
 	}
 
 	protected abstract GameObject Wake(GameObject prefab,Side side);

@@ -3,7 +3,7 @@ using UnityEngine;
 
 public class Line : Ref {
 
-	public float declay;
+	public float declayInSeconds;
 
 	LineRenderer lr { get { return GetComponent<LineRenderer>(); } }
 
@@ -19,10 +19,9 @@ public class Line : Ref {
 
 	float targetAlpha { get { return 0f; } }
 	float currentAlpha { get { return lr.startColor.a; } }
-	float minDelta = 0.05f;
 	void Alpha(){
-		var delta = (targetAlpha - currentAlpha) * declay;
-		SetAlpha (currentAlpha + (Mathf.Abs(delta) > minDelta? delta: delta > 0f? minDelta: -minDelta));
+		var delta = (targetAlpha - currentAlpha) * deltaTime / Mathf.Clamp(declayInSeconds,0.1f,float.MaxValue);
+		SetAlpha (currentAlpha + delta);
 	}
 
 	void SetAlpha(float alpha){

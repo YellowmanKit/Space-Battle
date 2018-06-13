@@ -125,8 +125,8 @@ c2275a8bfbb9f9942cad75ecdfded41d UnityEngine.HoloLens.dll:UnityEngine.XR.WSA.Spa
 05524b8f659e7bfe5756d1335fec24ba Assembly-CSharp.dll:.Particle
 1cddfdaacd24d133c7ccf0c6c0eb940b Assembly-CSharp.dll:.RecruitChoice
 d3ba67a214f2b571fd29584bb79dc460 Assembly-CSharp.dll:.Bar
-ff4caba396060b1d13e857869e6a4c59 Assembly-CSharp.dll:.Bolt
-fbdb5335b2c1639796a3516098cc3021 Assembly-CSharp.dll:.Intercept
+bc1fd8de6baf9a5a0c954e5eb5820786 Assembly-CSharp.dll:.Bolt
+8a71e523381c01ad619dcc0d6f355af7 Assembly-CSharp.dll:.Intercept
 351eb66803bdd0cdaff0b2e6e9f96fc6 Assembly-CSharp.dll:.State
 dc1287e9856089564faf831f5f6657cc Assembly-CSharp.dll:.Center
 9f92a2f9295422518e1ddfdf4cd71902 Assembly-CSharp.dll:.Recruit
@@ -146,8 +146,8 @@ e9bdabf9265d758d56f01bb188916fa8 UnityEngine.Networking.dll:UnityEngine.Networki
 3f32f08a64daf40b09ed864d96fe3840 UnityEngine.Networking.dll:UnityEngine.Networking.NetworkTransform
 73843688b51256aed059f049c540bca8 UnityEngine.Networking.dll:UnityEngine.Networking.NetworkTransformChild
 528ea1fd7c01796fc60c4e2f172ea229 UnityEngine.Networking.dll:UnityEngine.Networking.NetworkTransformVisualizer
-2b08e16f20422726f8374e1100d147f7 Assembly-CSharp.dll:.CustomInput
-731b9770a745ddd3213e02ded1fb73f1 Assembly-CSharp.dll:.Repair
+c1658260dea66a4632c58076b20a2ae5 Assembly-CSharp.dll:.CustomInput
+b85e555de43b36572368a30de349f02f Assembly-CSharp.dll:.Repair
 7bd7d22c774acaa6fd6416c8cbe8c94e Assembly-CSharp.dll:.Wave
 05524b8f659e7bfe5756d1335fec24ba UnityEngine.TestRunner.dll:UnityEngine.TestTools.TestRunner.Callbacks.PlayModeRunnerCallback
 f02726adeff0a3ec5905565234b372da UnityEngine.TestRunner.dll:UnityEngine.TestTools.TestRunner.PlaymodeTestsController
@@ -169,7 +169,8 @@ de237c577f867d632969a4b701ddca76 Assembly-CSharp.dll:.Pilot
 9de3a22eca9aefadba2d10d5987cefe3 UnityEngine.SpatialTracking.dll:UnityEngine.SpatialTracking.TrackedPoseDriver
 6b69a71fe702a1a00d4b58b0f7010daf Assembly-CSharp.dll:.Move
 8037afc14c08922e98dec75c61494727 Assembly-CSharp.dll:.Hitpoint
-271a63b6229235d542b667acd5fd9485 Assembly-CSharp.dll:.ProjectileLauncher
-64ca72eb295b33139423ca9836b4644d Assembly-CSharp.dll:.Line
+f901c27f830c21cefc2245a8a33d4e7e Assembly-CSharp.dll:.ProjectileLauncher
+674678e057b78f4c241d0ce79e0d0a07 Assembly-CSharp.dll:.Line
 6feafd8c362f86996b0d73b7b9b22bdc Assembly-CSharp.dll:.RecruitPanel
 05524b8f659e7bfe5756d1335fec24ba Assembly-CSharp.dll:.Search
+53a029a061264c1c644f30d60cdc3196 Assembly-CSharp.dll:.Beam

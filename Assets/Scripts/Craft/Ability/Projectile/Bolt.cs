@@ -10,7 +10,8 @@ public class Bolt : Projectile {
 
 	bool hitted;
 
-	public void Init(){
+	public void Init(bool isPlayer){
+		InitProjectile (isPlayer);
 		rb.velocity = transform.up * initSpeed;
 		hitted = false;
 	}
@@ -35,12 +36,13 @@ public class Bolt : Projectile {
 
 	bool OnHit(Collider2D other){
 		repelled = other.tag == "Shield" ? true : false;
-		var tag = other.tag == "Shield"? other.transform.parent.tag: other.tag;
+		return !(other.tag == "Trigger") && !hitted? true: false;
+		/*var tag = other.tag == "Shield"? other.transform.parent.tag: other.tag;
 		return (
 			!hitted && 
 			((gameObject.tag == "PlayerProjectile" && tag == "Enemy") ||
 				(gameObject.tag == "EnemyProjectile" && tag == "Player"))
-		);
+		);*/
 	}
 
 	public void Intercepted(){

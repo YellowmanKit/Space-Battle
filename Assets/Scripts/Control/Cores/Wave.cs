@@ -7,6 +7,7 @@ public class Wave : Control {
 
 	public void NextWave(){
 		PlayerFleetPrewarm ();
+
 		waveCount++;
 		for (int i = 0; i < 5 * waveCount; i++) {
 			craftPool.Spawn (CraftName.Bat, Side.Enemy);
@@ -14,11 +15,13 @@ public class Wave : Control {
 		for (int i = 0; i < (int)Mathf.Floor((waveCount / 2)); i++) {
 			craftPool.Spawn (CraftName.Beatle, Side.Enemy);
 			craftPool.Spawn (CraftName.Pigeon, Side.Enemy);
+			craftPool.Spawn (CraftName.Eagle, Side.Enemy);
 		}
 		for (int i = 0; i < (int)Mathf.Floor((waveCount / 3)); i++) {
 			craftPool.Spawn (CraftName.Bee, Side.Enemy);
-			craftPool.Spawn (CraftName.Eagle, Side.Enemy);
+			craftPool.Spawn (CraftName.Eel, Side.Enemy);
 		}
+		search.SortFleetListByXPosition (Side.Enemy);
 	}
 
 	void PlayerFleetPrewarm(){

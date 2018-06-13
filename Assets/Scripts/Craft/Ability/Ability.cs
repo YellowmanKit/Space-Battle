@@ -7,6 +7,7 @@ public abstract class Ability : Ref {
 	protected float nextUse;
 	protected bool craftIsDestroyed { get { return GetComponentInParent<State> ().destroyed; } }
 	protected Rigidbody2D rb { get { return GetComponentInParent<Rigidbody2D> (); } }
+	protected Pilot pilot { get { return GetComponentInParent<Pilot>(); } }
 
 	float randomize { get { return Random.Range (-variation, variation); } }
 
@@ -22,8 +23,9 @@ public abstract class Ability : Ref {
 		AttemptToShootAbility ();
 	}
 
-	public bool isPlayer { get { return transform.parent.tag == "Player"; } }
-	bool canUse { get { return !craftIsDestroyed && time > nextUse && ((isPlayer && fleetManage.enemyExist) || (!isPlayer && fleetManage.playerExist)); } }
+	public bool isPlayer { get { return pilot.isPlayer; } }
+	public bool canUseWhenNoEnemy;
+	bool canUse { get { return !craftIsDestroyed && time > nextUse && ((isPlayer && fleetManage.enemyExist) || (!isPlayer && fleetManage.playerExist) || canUseWhenNoEnemy); } }
 	protected abstract bool shallUse();
 
 	protected abstract void UseAbility();

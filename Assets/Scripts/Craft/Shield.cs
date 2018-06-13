@@ -5,7 +5,7 @@ using UnityEngine;
 public class Shield : Alpha {
 
 	public int shieldHp,shieldHpMax;
-	CircleCollider2D shieldCollider { get { return GetComponent<CircleCollider2D> (); } }
+	CapsuleCollider2D shieldCollider { get { return GetComponent<CapsuleCollider2D> (); } }
 
 	void OnEnable(){
 		Recharge ();
@@ -15,6 +15,7 @@ public class Shield : Alpha {
 	}
 
 	void Recharge(){
+		gameObject.layer = LayerMask.NameToLayer ((isPlayer ? "Player" : "Enemy") + "Shield");
 		shieldHp = shieldHpMax;
 	}
 
@@ -50,7 +51,7 @@ public class Shield : Alpha {
 	}
 
 	public void OnHit(){
-		SetAlpha (0.5f);
+		SetAlpha (0.3f + 0.3f * shieldHp / shieldHpMax);
 	}
 
 	public bool isDown { get { return shieldHp <= 0; } }

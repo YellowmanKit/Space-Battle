@@ -5,6 +5,7 @@ public class CustomInput : Ref {
 
 	public Vector2 target;
 	public ParticleSystem onClick;
+	public float lastTouch;
 
 	float nextTouch;
 
@@ -23,7 +24,7 @@ public class CustomInput : Ref {
 				target = new Vector2 (hit.point.x, hit.point.y);
 				EmitOnclick ();
 			}
-
+			lastTouch = time;
 			nextTouch = time + 0.1f;
 		}
 	}
@@ -38,7 +39,7 @@ public class CustomInput : Ref {
 				target = new Vector2 (hit.point.x, hit.point.y);
 				EmitOnclick ();
 			}
-
+			lastTouch = time;
 			nextTouch = time + 0.1f;
 		}
 	}

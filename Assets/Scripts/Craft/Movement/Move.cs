@@ -22,7 +22,13 @@ public class Move : Craft {
 			destination = (Vector2)transform.position;
 			return;
 		}
-		rb.AddForce((destination - (Vector2)transform.position) * engineForce);
+		Vector2 diff = input.target - (Vector2)transform.position;
+		if (isPlayer && input.lastTouch > time - 0.25f && diff.magnitude < 1f) {
+			rb.AddForce (Vector3.Normalize(diff) * engineForce * -1f / Mathf.Clamp(diff.magnitude * 2f,0.05f,float.MaxValue));
+		} else {
+			diff = destination - (Vector2)transform.position;
+			rb.AddForce (Vector3.Normalize(diff) * engineForce * Mathf.Clamp(diff.magnitude,1f,3f));
+		}
 
 		if(rb.velocity.magnitude > maxSpeed){
 			rb.velocity = rb.velocity.normalized * maxSpeed;

@@ -24,7 +24,6 @@ public abstract class Laser : Ability {
 	}
 
 	protected Line laserLine { get { return GetComponentInChildren<Line> (); } }
-	protected Pilot pilot { get { return GetComponentInParent<Pilot> (); } }
 
 	void FixedUpdate(){
 		AbilityUpdate ();

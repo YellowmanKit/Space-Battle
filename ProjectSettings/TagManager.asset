@@ -9,6 +9,7 @@ TagManager:
   - PlayerProjectile
   - EnemyProjectile
   - Shield
+  - Trigger
   layers:
   - Default
   - TransparentFX
@@ -18,20 +19,20 @@ TagManager:
   - UI
   - 
   - 
-  - Shield
-  - Projectile
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
+  - PlayerDrone
+  - PlayerFighter
+  - PlayerCruiser
+  - PlayerBattleship
+  - EnemyDrone
+  - EnemyFighter
+  - EnemyCruiser
+  - EnemyBattleship
+  - PlayerShield
+  - EnemyShield
+  - PlayerProjectile
+  - EnemyProjectile
+  - PlayerTrigger
+  - EnemyTrigger
   - 
   - 
   - 

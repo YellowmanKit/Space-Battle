@@ -26,6 +26,22 @@ public class Recruit : Control {
 		}
 	}
 
+	public void HandleDismissButtonPressed(){
+		if (main.gamePhase != Phase.Recruit || panel.recruitPanel.selectedChoice == null) {
+			return;
+		}
+		var selectedCraft = panel.recruitPanel.selectedAvailableCraft;
+		foreach (GameObject craft in craftPool.pools[PoolType.Player]) {
+			var state = craft.GetComponent<State> ();
+			if (state.craftName == selectedCraft.craftName && !state.destroyed) {
+				credits += selectedCraft.cost;
+				state.CraftDestroyed();
+				panel.recruitPanel.UpdateInformation ();
+				break;
+			}
+		}
+	}
+
 	void OnCraftUnlocked(AvailableCraft craft){
 		credits -= craft.unlockCost;
 		craft.locked = false;

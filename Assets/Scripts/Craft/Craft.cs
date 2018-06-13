@@ -21,8 +21,9 @@ public abstract class Craft : Ref {
 	protected Hitpoint hitpoint { get { return GetComponentInParent<Hitpoint> (); } }
 	protected Shield shield { get { return GetComponentInChildren<Shield> (); } }
 	protected State state { get { return GetComponent<State>(); } }
+	protected Pilot pilot { get { return GetComponentInParent<Pilot>(); } }
 	protected SpriteRenderer sr { get { return GetComponent<SpriteRenderer>(); } }
 
-	public bool isPlayer { get { return gameObject.tag == "Player"; } }
+	public bool isPlayer { get { return pilot.side == Side.Player; } }
 
 }

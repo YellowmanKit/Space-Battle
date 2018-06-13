@@ -184,7 +184,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   craftClass: 1
-  craftName: 3
+  craftName: 5
   destroyed: 0
 --- !u!114 &114222055460118730
 MonoBehaviour:
@@ -197,8 +197,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 410bf89c43670044dbe9eaedf015eef8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  maxSpeed: 1.75
-  accel: 1
+  maxSpeed: 1.25
+  accel: 0.5
   breakDistance: 1.5
   breakFactor: 0.95
   destination: {x: 0, y: 0}
@@ -243,12 +243,13 @@ MonoBehaviour:
   coolDown: 4
   prewarm: 2
   variation: 1
+  canUseWhenNoEnemy: 0
   projectileName: 1
   amountPreUse: 6
   shootSeperation: 0.1
   shotSpawns:
-  - {x: -0.035, y: -0.05}
-  - {x: 0.035, y: -0.05}
+  - {x: -0.9, y: -1}
+  - {x: 0.9, y: -1}
   shootAccel: {x: 0, y: -20}
 --- !u!114 &114870861094084574
 MonoBehaviour:
@@ -263,10 +264,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   side: 0
   moveCd: 0.5
-  variation: 1
+  variation: 0.25
   backWhenShieldDown: 0
   target: {fileID: 0}
-  backDistance: 2.5
+  backDistance: 2
   yFree: 0
   formationX: 0
 --- !u!198 &198066135947754676

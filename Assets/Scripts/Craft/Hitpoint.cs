@@ -7,7 +7,7 @@ public class Hitpoint : Craft {
 	public Bar hpBar;
 	public float barDistance;
 
-	public void Start(){
+	public void OnEnable(){
 		hp = hpMax;
 		InitHpBar ();
 	}

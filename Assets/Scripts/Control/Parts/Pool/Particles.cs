@@ -9,7 +9,7 @@ public class Particles : Pool {
 	}
 
 	public Particle Spawn(ParticleName particleName){
-		return SpawnFromPool (particleName.ToString (), prefabs [(int)particleName], Side.Neutral).GetComponent<Particle>();
+		return SpawnParticleFromPool (particleName.ToString (), prefabs [(int)particleName], Side.Neutral).GetComponent<Particle>();
 	}
 
 	protected override GameObject Wake(GameObject particle,Side side){

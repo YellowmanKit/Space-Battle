@@ -4,21 +4,32 @@ using UnityEngine;
 
 public class Search : Control {
 
-	public Transform FindClosestTarget(Transform caller,Side targetSide){
-		var pool = craftPool.pools [SideToPoolType (targetSide)];
-		if (pool.Count == 0) {
+	public Transform FindClosestTarget(GameObject caller,Side targetSide){
+		var targetPool = craftPool.pools [SideToPoolType (targetSide)];
+		var allyPool = craftPool.pools [SideToPoolType (targetSide == Side.Player ? Side.Enemy : Side.Player)];
+
+		if (targetPool.Count == 0 || allyPool.Count == 0) {
 			return null;
 		}
 
-		GameObject target = gameObject;
-		float minDistance = float.MaxValue;
-		foreach (GameObject craft in pool) {
-			float distance = Mathf.Abs (craft.transform.position.x - caller.position.x);
-			if (distance < minDistance) {
-				target = craft;
-				minDistance = distance;
-			}
-		}
-		return target.transform;
+		return targetPool [Mathf.FloorToInt(allyPool.IndexOf (caller) * targetPool.Count / allyPool.Count) ].transform;
 	}
+
+	float nextUpdate;
+	void Update(){
+		if (time < nextUpdate) {
+			return;
+		}
+		SortFleetListByXPosition (Side.Player);
+		SortFleetListByXPosition (Side.Enemy);
+
+		nextUpdate = time + 1f;
+	}
+
+	public void SortFleetListByXPosition(Side side){
+		var list = craftPool.pools [SideToPoolType (side)];
+		list.Sort((a,b)=>( a.transform.position.x.CompareTo(b.transform.position.x) ));
+	}
+
+
 }
