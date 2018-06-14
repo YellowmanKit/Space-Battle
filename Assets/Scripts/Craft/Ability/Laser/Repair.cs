@@ -26,7 +26,8 @@ public class Repair : Laser {
 		for (int i = 0; i < targetList.Count * 2; i++) {
 			if (index < 0 || index > targetList.Count - 1) {
 				index += value;
-				value = (value + 1) * -1;
+				value *= -1;
+				value += value > 0? 1 : -1;
 				continue;
 			}
 			if (targetList [index].GetComponent<Hitpoint> ().isDamaged) {
@@ -34,7 +35,8 @@ public class Repair : Laser {
 				break;
 			}
 			index += value;
-			value = (value + 1) * -1;
+			value *= -1;
+			value += value > 0? 1 : -1;
 		}
 
 		if (closestTarget != null) {

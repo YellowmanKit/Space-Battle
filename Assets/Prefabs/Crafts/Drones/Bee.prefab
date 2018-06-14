@@ -243,7 +243,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   coolDown: 0.25
   prewarm: 1
-  variation: 0.1
+  variation: 0.05
   canUseWhenNoEnemy: 1
   range: 0.5
   repairValue: 1

@@ -559,26 +559,6 @@ MonoBehaviour:
   players: {fileID: 1528735846}
   enemies: {fileID: 1709713797}
   prefabs: []
---- !u!1 &252891438 stripped
-GameObject:
-  m_PrefabParentObject: {fileID: 1803559694564008, guid: 1631fe99fbf6a314885dc49b10ed5c63,
-    type: 2}
-  m_PrefabInternal: {fileID: 1633318897}
---- !u!114 &252891440
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 252891438}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 1982d3f2122fc6e4b9d53be79d5d4915, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  coolDown: 0
-  prewarm: 0
-  variation: 0
-  canUseWhenNoEnemy: 0
 --- !u!1 &263759970
 GameObject:
   m_ObjectHideFlags: 0
@@ -2281,57 +2261,6 @@ MonoBehaviour:
   playerOnly: 0
   enemyOnly: 0
   prefab: {fileID: 1264527789008358, guid: 7836eefa132810e47900183f98e23738, type: 2}
---- !u!1001 &1633318897
-Prefab:
-  m_ObjectHideFlags: 0
-  serializedVersion: 2
-  m_Modification:
-    m_TransformParent: {fileID: 0}
-    m_Modifications:
-    - target: {fileID: 4364321449712428, guid: 1631fe99fbf6a314885dc49b10ed5c63, type: 2}
-      propertyPath: m_LocalPosition.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4364321449712428, guid: 1631fe99fbf6a314885dc49b10ed5c63, type: 2}
-      propertyPath: m_LocalPosition.y
-      value: -3
-      objectReference: {fileID: 0}
-    - target: {fileID: 4364321449712428, guid: 1631fe99fbf6a314885dc49b10ed5c63, type: 2}
-      propertyPath: m_LocalPosition.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4364321449712428, guid: 1631fe99fbf6a314885dc49b10ed5c63, type: 2}
-      propertyPath: m_LocalRotation.x
-      value: -0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4364321449712428, guid: 1631fe99fbf6a314885dc49b10ed5c63, type: 2}
-      propertyPath: m_LocalRotation.y
-      value: -0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4364321449712428, guid: 1631fe99fbf6a314885dc49b10ed5c63, type: 2}
-      propertyPath: m_LocalRotation.z
-      value: -0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4364321449712428, guid: 1631fe99fbf6a314885dc49b10ed5c63, type: 2}
-      propertyPath: m_LocalRotation.w
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 4364321449712428, guid: 1631fe99fbf6a314885dc49b10ed5c63, type: 2}
-      propertyPath: m_RootOrder
-      value: 5
-      objectReference: {fileID: 0}
-    - target: {fileID: 1711331571435592, guid: 1631fe99fbf6a314885dc49b10ed5c63, type: 2}
-      propertyPath: m_IsActive
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 1803559694564008, guid: 1631fe99fbf6a314885dc49b10ed5c63, type: 2}
-      propertyPath: m_Name
-      value: Dolphin beam
-      objectReference: {fileID: 0}
-    m_RemovedComponents:
-    - {fileID: 114189210860103394, guid: 1631fe99fbf6a314885dc49b10ed5c63, type: 2}
-  m_ParentPrefab: {fileID: 100100000, guid: 1631fe99fbf6a314885dc49b10ed5c63, type: 2}
-  m_IsPrefabParent: 0
 --- !u!1 &1633741804
 GameObject:
   m_ObjectHideFlags: 0

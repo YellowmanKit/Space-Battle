@@ -22,27 +22,54 @@ public class FleetManage : Control {
 		}
 	}
 
-	float randomize { get { return Random.Range (-0.1f, 0.1f); } }
 	public void SetFormation(Side side){
 		foreach (KeyValuePair<CraftName,List<GameObject>> pair in craftPool.craftsList[side]) {
-			if (pair.Value.Count == 0) {
+			var list = pair.Value;
+			if (list.Count == 0) {
 				continue;
 			}
-			Class craftClass = pair.Value [0].GetComponent<State> ().craftClass;
-			float space = craftClass == Class.Drone ? 0.25f : craftClass == Class.Fighter ? 0.5f : craftClass == Class.Cruiser ? 1f : craftClass == Class.Battleship ? 2f : 1f;
+
+			list.Sort((a,b)=>( a.transform.position.x.CompareTo(b.transform.position.x) ));
+
+			Class craftClass = list [0].GetComponent<State> ().craftClass;
+			float space = craftClass == Class.Drone ? 0.35f : craftClass == Class.Fighter ? 0.5f : craftClass == Class.Cruiser ? 0.75f : craftClass == Class.Battleship ? 1.75f : 1f;
+			float width = Center.xMax - Center.xMin;
+			for (int i = 0; i < 10; i++) {
+				if (list.Count * space > width) {
+					space *= 0.66f;
+				}
+			}
+
+
 			float occupied = 0f;
 			float multiplier = 0f;
-			foreach (GameObject craft in pair.Value) {
-				float xPosi = Mathf.Ceil(occupied / 2f) * multiplier * (space + randomize);
+
+			var index = Mathf.FloorToInt (list.Count / 2f);
+			var value = -1;
+			for (int i = 0; i < list.Count * 2; i++) {
+				if (index < 0 || index > list.Count - 1) {
+					index += value;
+					value *= -1;
+					value += value > 0? 1 : -1;
+					continue;
+				}
+				float xPosi = Mathf.Ceil(occupied / 2f) * multiplier * space;
 				if (xPosi > Center.xMax || xPosi < Center.xMin) {
 					xPosi = 0f;
 					occupied = 0f;
 				}
-				craft.GetComponent<Pilot> ().formationX = xPosi;
+				var pilot = list [index].GetComponent<Pilot> ();
+				pilot.formationX = xPosi;
+				//Debug.Log (index + " " + xPosi);
 
 				occupied++;
-				multiplier = occupied % 2f == 0f ? -1f : 1f;
+				multiplier = occupied % 2f == 0f ? 1f : -1f;
+
+				index += value;
+				value *= -1;
+				value += value > 0? 1 : -1;
 			}
+				
 		}
 	}
 

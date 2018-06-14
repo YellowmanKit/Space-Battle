@@ -37,12 +37,6 @@ public class Bolt : Projectile {
 	bool OnHit(Collider2D other){
 		repelled = other.tag == "Shield" ? true : false;
 		return !(other.tag == "Trigger") && !hitted? true: false;
-		/*var tag = other.tag == "Shield"? other.transform.parent.tag: other.tag;
-		return (
-			!hitted && 
-			((gameObject.tag == "PlayerProjectile" && tag == "Enemy") ||
-				(gameObject.tag == "EnemyProjectile" && tag == "Player"))
-		);*/
 	}
 
 	public void Intercepted(){
