@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class Shield : Alpha {
 
-	public int shieldHp,shieldHpMax;
+	public float shieldHp,shieldHpMax;
 	CapsuleCollider2D shieldCollider { get { return GetComponent<CapsuleCollider2D> (); } }
 
 	void OnEnable(){
@@ -20,7 +20,7 @@ public class Shield : Alpha {
 	}
 
 	Bar hpBar { get { return GetComponentInParent<Hitpoint> ().hpBar; } }
-	public void TakeDamage(int damage){
+	public void TakeDamage(float damage){
 		if (isDown) {
 			return;
 		}

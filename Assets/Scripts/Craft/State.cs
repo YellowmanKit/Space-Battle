@@ -6,7 +6,7 @@ public class State : Alpha {
 
 	public Class craftClass;
 	public CraftName craftName;
-	public bool destroyed;
+	public bool destroyed,deadLock;
 
 	void OnEnable(){
 		InitState ();
@@ -44,7 +44,7 @@ public class State : Alpha {
 	}
 
 	protected override float targetAlpha (){
-		return destroyed ? 0f : main.gamePhase == Phase.Recruit? 0.5f: 1f;
+		return deadLock? (destroyed? 0.25f : 1f) : destroyed ? 0f : main.gamePhase == Phase.Recruit? 0.5f: 1f;
 	}
 
 	protected override void OnAlphaZero(){

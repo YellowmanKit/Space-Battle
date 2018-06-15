@@ -30,7 +30,8 @@ public enum ProjectileName {
 public enum ParticleName {
 	BoltOnHit,
 	BulletOnHit,
-	RocketOnHit
+	RocketOnHit,
+	BeamOnHit
 }
 
 public abstract class Pool : Control {

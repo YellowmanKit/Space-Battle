@@ -302,7 +302,7 @@ BoxCollider2D:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1803559694564008}
-  m_Enabled: 1
+  m_Enabled: 0
   m_Density: 1
   m_Material: {fileID: 0}
   m_IsTrigger: 1
@@ -381,10 +381,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   coolDown: 12
   prewarm: 4
-  variation: 2
+  variation: 1
   canUseWhenNoEnemy: 0
+  particleName: 3
   damage: 10
-  damageDivide: 10
   beamWidth: 0.75
   duration: 2
   delay: 3
@@ -404,7 +404,7 @@ MonoBehaviour:
   variation: 0.25
   backWhenShieldDown: 1
   target: {fileID: 0}
-  backDistance: 1
+  backDistance: 2.5
   yFree: 0
   formationX: 0
 --- !u!114 &114804556374019434
@@ -459,7 +459,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   shieldHp: 0
-  shieldHpMax: 100
+  shieldHpMax: 150
 --- !u!198 &198298064395696752
 ParticleSystem:
   m_ObjectHideFlags: 1

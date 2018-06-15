@@ -21,6 +21,9 @@ public class Wave : Control {
 			craftPool.Spawn (CraftName.Bee, Side.Enemy);
 			craftPool.Spawn (CraftName.Eel, Side.Enemy);
 		}
+		for (int i = 0; i < (int)Mathf.Floor((waveCount / 4)); i++) {
+			craftPool.Spawn (CraftName.Dolphin, Side.Enemy);
+		}
 		search.SortFleetListByXPosition (Side.Enemy);
 	}
 

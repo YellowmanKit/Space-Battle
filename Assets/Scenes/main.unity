@@ -227,7 +227,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a19fa10a4ad8c584f9a0dc65d04bb725, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  waveCount: 0
+  waveCount: 4
 --- !u!4 &64377601
 Transform:
   m_ObjectHideFlags: 0
@@ -1989,6 +1989,7 @@ MonoBehaviour:
   - {fileID: 1409038382244648, guid: 6923c811e85c73a4b93fa419d207cdcd, type: 2}
   - {fileID: 1345939127131678, guid: 731fb24707fab1f46b75b170e8792be1, type: 2}
   - {fileID: 1668264642250480, guid: a0a2af57a24ba5e41ac7fbf89d79257f, type: 2}
+  - {fileID: 1531060678639360, guid: 02b108ab3d688064bb42a506477ac19a, type: 2}
 --- !u!1 &1480350285
 GameObject:
   m_ObjectHideFlags: 0
@@ -7964,7 +7965,7 @@ MonoBehaviour:
   craftType: 0
   sprite: {fileID: 21300000, guid: 38b6ddf12ed2b8f4cbf5ce3191723a42, type: 3}
   craftName: 6
-  description: Advanced attack unit equiped with energy shield and rocket launcher
+  description: Advanced attack unit equiped with powerful rocket launcher
   cost: 200
   unlockCost: 0
   locked: 0
@@ -8066,7 +8067,7 @@ MonoBehaviour:
   craftType: 1
   sprite: {fileID: 21300000, guid: 91da392daefcf7845b97d31ddaa45e1e, type: 3}
   craftName: 7
-  description: Advanced attack unit equiped with beam weapon
+  description: Advanced defense unit equiped with energy shield and beam weapon
   cost: 200
   unlockCost: 0
   locked: 0

@@ -9,15 +9,17 @@ public class Particle : Ref {
 	public void Init(Vector3 position, Quaternion rotation){
 		transform.position = position;
 		transform.rotation = rotation;
-		//disableTime = time + duration;
+
 		ps.Play ();
 	}
 
-	/*float disableTime;
-	void Update(){
-		if (time > disableTime) {
-			gameObject.SetActive (false);
-		}
-	}*/
+	public void InitBeam(Vector3 position, bool isPlayer){
+		transform.position = position;
+
+		var rotate = isPlayer? 0f: 180f;
+		var psmain = ps.main;
+		psmain.startRotation = Random.Range(Mathf.Deg2Rad * (rotate - 45f),Mathf.Deg2Rad * (rotate + 45f));
+		ps.Play ();
+	}
 
 }

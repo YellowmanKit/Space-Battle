@@ -22,12 +22,12 @@ public class Bar : UI {
 		transform.Translate (hitpoint.transform.up * -1f * hitpoint.barDistance, Space.Self);
 	}
 
-	int targetValue { get { return hitpoint != null ? hitpoint.hp : 0; } }
-	int maxValue { get { return hitpoint != null ? hitpoint.hpMax : 0; } }
+	float targetValue { get { return hitpoint != null ? hitpoint.hp : 0; } }
+	float maxValue { get { return hitpoint != null ? hitpoint.hpMax : 0; } }
 	float displayValue;
 
 	void Value(){
-		displayValue += ((float)targetValue - displayValue) * 0.2f;
+		displayValue += (targetValue - displayValue) * 0.2f;
 		image.fillAmount = displayValue / maxValue;
 	}
 

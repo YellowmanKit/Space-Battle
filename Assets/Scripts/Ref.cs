@@ -23,4 +23,20 @@ public abstract class Ref : MonoBehaviour {
 	protected float time { get { return Time.timeSinceLevelLoad; } }
 	protected float deltaTime { get { return Time.deltaTime; } }
 
+	protected int playerRaycastLayer { get { return(
+		    1 << LayerMask.NameToLayer ("EnemyDrone") |
+			1 << LayerMask.NameToLayer ("EnemyFighter") |
+			1 << LayerMask.NameToLayer ("EnemyCruiser") |
+			1 << LayerMask.NameToLayer ("EnemyBattleship") |
+			1 << LayerMask.NameToLayer ("EnemyShield")
+		);}}
+
+	protected int enemyRaycastLayer { get { return(
+		1 << LayerMask.NameToLayer ("PlayerDrone") |
+		1 << LayerMask.NameToLayer ("PlayerFighter") | 
+		1 << LayerMask.NameToLayer ("PlayerCruiser") |
+		1 << LayerMask.NameToLayer ("PlayerBattleship") |
+		1 << LayerMask.NameToLayer ("PlayerShield")
+	);}}
+
 }

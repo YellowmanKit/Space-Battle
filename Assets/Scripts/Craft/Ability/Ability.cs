@@ -8,6 +8,7 @@ public abstract class Ability : Ref {
 	protected bool craftIsDestroyed { get { return GetComponentInParent<State> ().destroyed; } }
 	protected Rigidbody2D rb { get { return GetComponentInParent<Rigidbody2D> (); } }
 	protected Pilot pilot { get { return GetComponentInParent<Pilot>(); } }
+	protected State state { get { return GetComponentInParent<State>(); } }
 
 	float randomize { get { return Random.Range (-variation, variation); } }
 

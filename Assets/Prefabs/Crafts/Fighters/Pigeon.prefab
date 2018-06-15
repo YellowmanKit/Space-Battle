@@ -314,7 +314,7 @@ MonoBehaviour:
   variation: 0.25
   backWhenShieldDown: 0
   target: {fileID: 0}
-  backDistance: 1.5
+  backDistance: 2.5
   yFree: 0
   formationX: 0
 --- !u!114 &114705667865433890
