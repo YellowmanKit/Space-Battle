@@ -38,7 +38,7 @@ Transform:
   m_GameObject: {fileID: 1946155394919226}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 2.2, z: 0}
-  m_LocalScale: {x: 0.06, y: 0.06, z: 1}
+  m_LocalScale: {x: 0.06, y: 0.045, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
@@ -90,10 +90,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   particleName: 2
-  side: 0
+  isPlayerProjectile: 0
   damage: 30
   initSpeed: 0
-  accel: 9
+  accel: 6
 --- !u!212 &212952199489767056
 SpriteRenderer:
   m_ObjectHideFlags: 1

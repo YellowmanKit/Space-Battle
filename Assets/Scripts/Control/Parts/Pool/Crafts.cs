@@ -58,7 +58,10 @@ public class Crafts : Pool {
 
 		craft.transform.SetParent (inactive.Find(craft.name + "s"));
 
-		if (!fleetManage.enemyExist) {
+		if (main.gamePhase == Phase.Recruit) {
+			panel.UpdatePanel ();
+		}
+		if (main.gamePhase == Phase.Battle && !fleetManage.enemyExist) {
 			wave.WaveCleared ();
 		}
 		if (main.gamePhase == Phase.Battle && !fleetManage.playerExist) {

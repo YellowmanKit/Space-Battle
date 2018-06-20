@@ -23,6 +23,10 @@ public class Search : Control {
 		SortFleetListByXPosition (Side.Player);
 		SortFleetListByXPosition (Side.Enemy);
 
+		if (main.gamePhase == Phase.Recruit) {
+			fleetManage.SetFormation (Side.Player);
+		}
+
 		nextUpdate = time + 1f;
 	}
 

@@ -40,7 +40,6 @@ public class FleetManage : Control {
 				}
 			}
 
-
 			float occupied = 0f;
 			float multiplier = 0f;
 

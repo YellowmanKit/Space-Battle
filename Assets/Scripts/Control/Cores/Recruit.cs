@@ -36,7 +36,7 @@ public class Recruit : Control {
 			if (state.craftName == selectedCraft.craftName && !state.destroyed) {
 				credits += selectedCraft.cost;
 				state.CraftDestroyed();
-				panel.recruitPanel.UpdateInformation ();
+				panel.UpdatePanel ();
 				break;
 			}
 		}

@@ -18,20 +18,24 @@ public enum CraftName {
 	Eel,
 	Dolphin,
 	Shark,
-	HumpbackWhale
+	HumpbackWhale,
+	BlueWhale
 }
 
 public enum ProjectileName {
 	Bolt,
 	Bullet,
-	Rocket
+	Rocket,
+	Missile
 }
 
 public enum ParticleName {
 	BoltOnHit,
 	BulletOnHit,
 	RocketOnHit,
-	BeamOnHit
+	BeamOnHit,
+	MissileOnHit,
+	WhaleBeamOnHit
 }
 
 public abstract class Pool : Control {

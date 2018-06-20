@@ -57,9 +57,9 @@ GameObject:
   - component: {fileID: 114159743429467190}
   - component: {fileID: 114953848676177944}
   - component: {fileID: 114291057110789456}
-  - component: {fileID: 114402814658522430}
   - component: {fileID: 114623822758199698}
   - component: {fileID: 70271268949820956}
+  - component: {fileID: 114487122524030340}
   m_Layer: 0
   m_Name: Eel
   m_TagString: Untagged
@@ -130,7 +130,7 @@ Transform:
   m_GameObject: {fileID: 1757168745407264}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0.84, y: -3, z: 0}
-  m_LocalScale: {x: 0.175, y: 0.175, z: 1}
+  m_LocalScale: {x: 0.125, y: 0.125, z: 1}
   m_Children:
   - {fileID: 4420318841257014}
   - {fileID: 4820567226232846}
@@ -148,7 +148,7 @@ Rigidbody2D:
   m_Simulated: 1
   m_UseFullKinematicContacts: 0
   m_UseAutoMass: 1
-  m_Mass: 0.045214992
+  m_Mass: 0.023068875
   m_LinearDrag: 0
   m_AngularDrag: 0.05
   m_GravityScale: 0
@@ -186,6 +186,7 @@ MonoBehaviour:
   craftClass: 2
   craftName: 6
   destroyed: 0
+  deadLock: 0
 --- !u!114 &114291057110789456
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -203,7 +204,8 @@ MonoBehaviour:
   breakFactor: 0.95
   destination: {x: 0, y: 0}
   mLock: 0
---- !u!114 &114402814658522430
+  isMissile: 0
+--- !u!114 &114487122524030340
 MonoBehaviour:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
@@ -228,7 +230,7 @@ MonoBehaviour:
   hp: 0
   hpMax: 100
   hpBar: {fileID: 0}
-  barDistance: 0.35
+  barDistance: 0.25
 --- !u!114 &114953848676177944
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -266,11 +268,14 @@ MonoBehaviour:
   projectileName: 2
   amountPreUse: 4
   shootSeperation: 0.15
+  isMissile: 0
   shotSpawns:
   - {x: -0.15, y: -0.75}
   - {x: 0.15, y: -0.75}
   - {x: -0.35, y: -0.75}
   - {x: 0.35, y: -0.75}
+  initSpeed: []
+  speedVariation: 0
   shootAccel: {x: 0, y: 0}
 --- !u!198 &198478727974122372
 ParticleSystem:

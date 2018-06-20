@@ -21,6 +21,7 @@ public class Shield : Alpha {
 
 	Bar hpBar { get { return GetComponentInParent<Hitpoint> ().hpBar; } }
 	public void TakeDamage(float damage){
+		//Debug.Log ("Shield TakeDamage: " + damage);
 		if (isDown) {
 			return;
 		}

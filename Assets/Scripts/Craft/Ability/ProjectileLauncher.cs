@@ -32,16 +32,29 @@ public class ProjectileLauncher : Ability {
 		}
 	}
 
-	public Vector2[] shotSpawns;
+	public bool isMissile;
+	public Vector2[] shotSpawns,initSpeed;
+	public float speedVariation;
+	float speedRandomize { get { return Random.Range (-speedVariation, speedVariation); } }
+	float multiplier { get { return isPlayer ? 1f : -1f; } }
 	int count;
 	void ShootProjectile(){
 		var proj = projectilePool.Spawn(projectileName, isPlayer? Side.Player: Side.Enemy);
 		var localScale = transform.parent.localScale;
 		proj.transform.position = transform.position;
-		proj.transform.Translate (new Vector2(shotSpawns [count].x * localScale.x, shotSpawns [count].y * localScale.y));
-
+		proj.transform.Translate (new Vector2(shotSpawns [count].x * localScale.x * multiplier, shotSpawns [count].y * localScale.y * multiplier));
 		proj.transform.rotation = transform.rotation;
-		proj.BroadcastMessage ("Init",isPlayer);
+
+		if (!isMissile) {
+			proj.BroadcastMessage ("Init", isPlayer);
+		}else{
+			object[] vars = new object[3];
+			vars [0] = isPlayer;
+			vars[1] = pilot.target != null ? (Vector2)pilot.target.position : new Vector2 (transform.position.x, isPlayer ? Center.yMax : Center.yMin);
+			vars [2] = initSpeed.Length > count? new Vector2( initSpeed [count].x + speedRandomize,initSpeed [count].y + speedRandomize) * multiplier: Vector2.zero;
+
+			proj.BroadcastMessage ("Init",vars);
+		}
 		count = (count + 1) % shotSpawns.Length;
 
 		ForceOnShoot ();

@@ -21,6 +21,7 @@ public class Hitpoint : Craft {
 	}
 
 	public void TakeDamage(float damage){
+		//Debug.Log ("HP TakeDamage: " + damage);
 		if (shield != null && !shield.isDown) {
 			return;
 		}
@@ -43,14 +44,15 @@ public class Hitpoint : Craft {
 		state.OnHit ();
 	}
 
-	float damageToTakePerSecond;
-	float totalDamageToTake;
+	float totalDamageToTake,damageToTakePerSecond;
 	public void TakeDamageOverTime(float damage,float duration){
+		//Debug.Log ("TakeDamageOverTime: " + damage + " duration: " + duration);
 		damageToTakePerSecond += damage / duration;
 		totalDamageToTake += damage;
 	}
 
 	public void RemoveDamageOverTime(float damage,float duration){
+		//Debug.Log ("RemoveDamageOverTime: " + damage + " duration: " + duration);
 		damageToTakePerSecond -= damage / duration;
 		totalDamageToTake -= damage;
 	}
@@ -61,7 +63,7 @@ public class Hitpoint : Craft {
 
 	float nextDamageOverTime;
 	void DamageOvertime(){
-		if (time > nextDamageOverTime && totalDamageToTake > 0) {
+		if (time > nextDamageOverTime && damageToTakePerSecond > 0f) {
 			nextDamageOverTime = time + 0.2f;
 
 			var damageToTake = damageToTakePerSecond * 0.2f;
@@ -70,7 +72,12 @@ public class Hitpoint : Craft {
 			} else {
 				TakeDamage (damageToTake);
 			}
+
 			totalDamageToTake -= damageToTake;
+
+			if (totalDamageToTake <= 0f) {
+				damageToTakePerSecond = 0f;
+			}
 		}
 	}
 

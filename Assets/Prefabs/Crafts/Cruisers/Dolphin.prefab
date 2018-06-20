@@ -92,9 +92,9 @@ GameObject:
   - component: {fileID: 114963730556638528}
   - component: {fileID: 114756813434054314}
   - component: {fileID: 114448997526804758}
-  - component: {fileID: 114804556374019434}
   - component: {fileID: 114929300077525482}
   - component: {fileID: 70302832030108454}
+  - component: {fileID: 114655888075598102}
   m_Layer: 0
   m_Name: Dolphin
   m_TagString: Untagged
@@ -173,8 +173,8 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1711331571435592}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: -3, z: 0}
-  m_LocalScale: {x: 0.12, y: 0.12, z: 1}
+  m_LocalPosition: {x: -0.7, y: -2.45, z: 0}
+  m_LocalScale: {x: 0.08, y: 0.08, z: 1}
   m_Children:
   - {fileID: 4386531896001076}
   - {fileID: 4683150179087730}
@@ -190,7 +190,7 @@ Transform:
   m_GameObject: {fileID: 1084514038841838}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0.15, z: 0}
-  m_LocalScale: {x: 0.8, y: 1.75, z: 1}
+  m_LocalScale: {x: 0.75, y: 1.75, z: 1}
   m_Children: []
   m_Father: {fileID: 4364321449712428}
   m_RootOrder: 0
@@ -247,7 +247,7 @@ Rigidbody2D:
   m_Simulated: 1
   m_UseFullKinematicContacts: 0
   m_UseAutoMass: 1
-  m_Mass: 0.08482756
+  m_Mass: 0.037701137
   m_LinearDrag: 0
   m_AngularDrag: 0.05
   m_GravityScale: 0
@@ -308,7 +308,7 @@ BoxCollider2D:
   m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 45}
+  m_Offset: {x: 0, y: 100}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0, y: 0}
@@ -319,7 +319,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 0.75, y: 90}
+  m_Size: {x: 0.75, y: 200}
   m_EdgeRadius: 0
 --- !u!70 &70302832030108454
 CapsuleCollider2D:
@@ -368,6 +368,7 @@ MonoBehaviour:
   breakFactor: 0.95
   destination: {x: 0, y: 0}
   mLock: 0
+  isMissile: 0
 --- !u!114 &114471049900000670
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -384,10 +385,21 @@ MonoBehaviour:
   variation: 1
   canUseWhenNoEnemy: 0
   particleName: 3
-  damage: 10
-  beamWidth: 0.75
+  damage: 15
+  beamWidth: 0.85
   duration: 2
   delay: 3
+--- !u!114 &114655888075598102
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1711331571435592}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3575e6839d30ced45b6dcd06fa36ec76, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!114 &114756813434054314
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -404,20 +416,9 @@ MonoBehaviour:
   variation: 0.25
   backWhenShieldDown: 1
   target: {fileID: 0}
-  backDistance: 2.5
+  backDistance: 3
   yFree: 0
   formationX: 0
---- !u!114 &114804556374019434
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1711331571435592}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 3575e6839d30ced45b6dcd06fa36ec76, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!114 &114929300077525482
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -432,7 +433,8 @@ MonoBehaviour:
   hp: 0
   hpMax: 50
   hpBar: {fileID: 0}
-  barDistance: 0.35
+  barDistance: 0.3
+  totalDamageToTake: 0
 --- !u!114 &114963730556638528
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -447,6 +449,7 @@ MonoBehaviour:
   craftClass: 2
   craftName: 7
   destroyed: 0
+  deadLock: 0
 --- !u!114 &114977038824128316
 MonoBehaviour:
   m_ObjectHideFlags: 1

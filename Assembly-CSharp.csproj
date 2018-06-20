@@ -71,6 +71,7 @@
      <Compile Include="Assets\Scripts\Craft\Ability\Laser\Laser.cs" />
      <Compile Include="Assets\Scripts\Craft\Ability\Laser\Repair.cs" />
      <Compile Include="Assets\Scripts\Craft\Ability\Projectile\Bolt.cs" />
+     <Compile Include="Assets\Scripts\Craft\Ability\Projectile\Missile.cs" />
      <Compile Include="Assets\Scripts\Craft\Ability\Projectile\Projectile.cs" />
      <Compile Include="Assets\Scripts\Craft\Ability\ProjectileLauncher.cs" />
      <Compile Include="Assets\Scripts\Craft\Alpha.cs" />

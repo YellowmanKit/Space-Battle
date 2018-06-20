@@ -41,8 +41,8 @@ public class Repair : Laser {
 
 		if (closestTarget != null) {
 			var targetClass = closestTarget.GetComponent<State> ().craftClass;
-			laserVariation = targetClass == Class.Battleship ? 0.25f : targetClass == Class.Cruiser ? 0.05f : 0.01f;
-			bonusRange = targetClass == Class.Battleship ? 0.5f : targetClass == Class.Cruiser ? 0.1f : 0f;
+			laserVariation = targetClass == Class.Battleship ? 0.15f : targetClass == Class.Cruiser ? 0.03f : 0.01f;
+			bonusRange = targetClass == Class.Battleship ? 0.35f : targetClass == Class.Cruiser ? 0.1f : 0f;
 
 			target = closestTarget;
 			pilot.target = closestTarget.transform;

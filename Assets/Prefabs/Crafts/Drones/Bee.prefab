@@ -40,9 +40,9 @@ GameObject:
   - component: {fileID: 114352938529454050}
   - component: {fileID: 114888998356195168}
   - component: {fileID: 114785039798296296}
-  - component: {fileID: 114999399321770752}
   - component: {fileID: 114364756186246166}
   - component: {fileID: 212776388813553752}
+  - component: {fileID: 114299336916870778}
   m_Layer: 0
   m_Name: Bee
   m_TagString: Untagged
@@ -130,7 +130,7 @@ Transform:
   m_GameObject: {fileID: 1264527789008358}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: -3, z: 0}
-  m_LocalScale: {x: 0.045, y: 0.045, z: 1}
+  m_LocalScale: {x: 0.04, y: 0.04, z: 1}
   m_Children:
   - {fileID: 4000839673363642}
   - {fileID: 4356154594006980}
@@ -184,6 +184,17 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   declayInSeconds: 0.25
+--- !u!114 &114299336916870778
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1264527789008358}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3575e6839d30ced45b6dcd06fa36ec76, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!114 &114352938529454050
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -198,6 +209,7 @@ MonoBehaviour:
   craftClass: 0
   craftName: 1
   destroyed: 0
+  deadLock: 0
 --- !u!114 &114364756186246166
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -230,6 +242,7 @@ MonoBehaviour:
   breakFactor: 0.95
   destination: {x: 0, y: 0}
   mLock: 0
+  isMissile: 0
 --- !u!114 &114885149613578278
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -266,17 +279,6 @@ MonoBehaviour:
   backDistance: 4.5
   yFree: 0
   formationX: 0
---- !u!114 &114999399321770752
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1264527789008358}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 3575e6839d30ced45b6dcd06fa36ec76, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!120 &120388597558215616
 LineRenderer:
   m_ObjectHideFlags: 1

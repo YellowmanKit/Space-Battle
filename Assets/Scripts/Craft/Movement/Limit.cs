@@ -3,7 +3,7 @@ using UnityEngine;
 
 public class Limit : Craft {
 
-	float clampForce { get { return rb.mass * 5; } }
+	float clampForce { get { return rb.mass * 2; } }
 
 	void Update () {
 		ClampPosition ();

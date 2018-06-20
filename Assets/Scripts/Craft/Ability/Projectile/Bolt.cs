@@ -4,7 +4,6 @@ using UnityEngine;
 
 public class Bolt : Projectile {
 
-	public Side side;
 	public int damage;
 	public float initSpeed,accel;
 
@@ -36,7 +35,7 @@ public class Bolt : Projectile {
 
 	bool OnHit(Collider2D other){
 		repelled = other.tag == "Shield" ? true : false;
-		return !(other.tag == "Trigger") && !hitted? true: false;
+		return other.tag != "Trigger" && !hitted? true: false;
 	}
 
 	public void Intercepted(){
