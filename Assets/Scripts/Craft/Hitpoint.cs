@@ -63,7 +63,7 @@ public class Hitpoint : Craft {
 
 	float nextDamageOverTime;
 	void DamageOvertime(){
-		if (time > nextDamageOverTime && damageToTakePerSecond > 0f) {
+		if (time > nextDamageOverTime && damageToTakePerSecond > 1f) {
 			nextDamageOverTime = time + 0.2f;
 
 			var damageToTake = damageToTakePerSecond * 0.2f;

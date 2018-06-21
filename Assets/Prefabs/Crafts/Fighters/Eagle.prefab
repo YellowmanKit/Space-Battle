@@ -89,8 +89,8 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1876243523141846}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: -3, z: 0}
-  m_LocalScale: {x: 0.025, y: 0.025, z: 1}
+  m_LocalPosition: {x: 1.32, y: -1.8, z: 0}
+  m_LocalScale: {x: 0.015, y: 0.015, z: 1}
   m_Children:
   - {fileID: 4597513201981712}
   - {fileID: 4538200397797912}
@@ -148,7 +148,7 @@ Rigidbody2D:
   m_Simulated: 1
   m_UseFullKinematicContacts: 0
   m_UseAutoMass: 1
-  m_Mass: 0.0131713245
+  m_Mass: 0.0024192228
   m_LinearDrag: 0
   m_AngularDrag: 0.05
   m_GravityScale: 0
@@ -219,7 +219,7 @@ MonoBehaviour:
   hp: 0
   hpMax: 30
   hpBar: {fileID: 0}
-  barDistance: 0.15
+  barDistance: 0.075
 --- !u!114 &114287498419738640
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -255,7 +255,7 @@ MonoBehaviour:
   - {x: 0.9, y: -1}
   initSpeed: []
   speedVariation: 0
-  shootAccel: {x: 0, y: -20}
+  shootAccel: {x: 0, y: -10}
 --- !u!114 &114870861094084574
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -268,7 +268,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   side: 0
-  moveCd: 0.5
+  moveCd: 0.75
   variation: 0.25
   backWhenShieldDown: 0
   target: {fileID: 0}
@@ -523,8 +523,8 @@ ParticleSystem:
     startSize:
       serializedVersion: 2
       minMaxState: 3
-      scalar: 0.1
-      minScalar: 0.09
+      scalar: 0.06
+      minScalar: 0.04
       maxCurve:
         serializedVersion: 2
         m_Curve:
@@ -576,8 +576,8 @@ ParticleSystem:
     startSizeY:
       serializedVersion: 2
       minMaxState: 3
-      scalar: 0.125
-      minScalar: 0.075
+      scalar: 0.06
+      minScalar: 0.04
       maxCurve:
         serializedVersion: 2
         m_Curve:

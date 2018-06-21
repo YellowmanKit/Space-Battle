@@ -162,8 +162,8 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1888661318268554}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: -3, z: 0}
-  m_LocalScale: {x: 0.02, y: 0.02, z: 1}
+  m_LocalPosition: {x: 1.64, y: -1.8, z: 0}
+  m_LocalScale: {x: 0.0125, y: 0.0125, z: 1}
   m_Children:
   - {fileID: 4539098108178460}
   - {fileID: 4059448654746206}
@@ -181,7 +181,7 @@ Rigidbody2D:
   m_Simulated: 1
   m_UseFullKinematicContacts: 0
   m_UseAutoMass: 1
-  m_Mass: 0.009940197
+  m_Mass: 0.0024850492
   m_LinearDrag: 0
   m_AngularDrag: 0.05
   m_GravityScale: 0
@@ -269,7 +269,7 @@ MonoBehaviour:
   hp: 0
   hpMax: 20
   hpBar: {fileID: 0}
-  barDistance: 0.1
+  barDistance: 0.05
 --- !u!114 &114191698497565048
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -312,11 +312,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   side: 0
-  moveCd: 0.5
+  moveCd: 0.75
   variation: 0.25
   backWhenShieldDown: 0
   target: {fileID: 0}
-  backDistance: 2.5
+  backDistance: 2.75
   yFree: 0
   formationX: 0
 --- !u!114 &114705667865433890
@@ -334,7 +334,7 @@ MonoBehaviour:
   prewarm: 1
   variation: 0
   canUseWhenNoEnemy: 1
-  range: 0.75
+  range: 0.4
 --- !u!114 &114893914842405074
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -386,7 +386,7 @@ LineRenderer:
   - {x: 0, y: 0, z: 0}
   m_Parameters:
     serializedVersion: 2
-    widthMultiplier: 0.03
+    widthMultiplier: 0.015
     widthCurve:
       serializedVersion: 2
       m_Curve:
@@ -517,7 +517,7 @@ ParticleSystem:
     startLifetime:
       serializedVersion: 2
       minMaxState: 0
-      scalar: 1.25
+      scalar: 1
       minScalar: 5
       maxCurve:
         serializedVersion: 2
@@ -570,7 +570,7 @@ ParticleSystem:
     startSpeed:
       serializedVersion: 2
       minMaxState: 0
-      scalar: -0.15
+      scalar: -0.1
       minScalar: 5
       maxCurve:
         serializedVersion: 2
@@ -686,7 +686,7 @@ ParticleSystem:
     startSize:
       serializedVersion: 2
       minMaxState: 0
-      scalar: 0.04
+      scalar: 0.03
       minScalar: 1
       maxCurve:
         serializedVersion: 2
@@ -739,7 +739,7 @@ ParticleSystem:
     startSizeY:
       serializedVersion: 2
       minMaxState: 0
-      scalar: 0.015
+      scalar: 0.0125
       minScalar: 1
       maxCurve:
         serializedVersion: 2

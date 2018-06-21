@@ -32,7 +32,7 @@ public class FleetManage : Control {
 			list.Sort((a,b)=>( a.transform.position.x.CompareTo(b.transform.position.x) ));
 
 			Class craftClass = list [0].GetComponent<State> ().craftClass;
-			float space = craftClass == Class.Drone ? 0.35f : craftClass == Class.Fighter ? 0.5f : craftClass == Class.Cruiser ? 0.75f : craftClass == Class.Battleship ? 1.75f : 1f;
+			float space = craftClass == Class.Drone ? 0.25f : craftClass == Class.Fighter ? 0.25f : craftClass == Class.Cruiser ? 0.5f : craftClass == Class.Battleship ? 1.5f : 1f;
 			float width = Center.xMax - Center.xMin;
 			for (int i = 0; i < 10; i++) {
 				if (list.Count * space > width) {

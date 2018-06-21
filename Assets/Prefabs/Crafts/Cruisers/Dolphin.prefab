@@ -159,7 +159,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1077731595883078}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: -2.5, z: 0}
+  m_LocalPosition: {x: 0, y: -2.67, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4117577825294276}
@@ -173,8 +173,8 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1711331571435592}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -0.7, y: -2.45, z: 0}
-  m_LocalScale: {x: 0.08, y: 0.08, z: 1}
+  m_LocalPosition: {x: -0.56, y: -1.8, z: 0}
+  m_LocalScale: {x: 0.06, y: 0.06, z: 1}
   m_Children:
   - {fileID: 4386531896001076}
   - {fileID: 4683150179087730}
@@ -247,7 +247,7 @@ Rigidbody2D:
   m_Simulated: 1
   m_UseFullKinematicContacts: 0
   m_UseAutoMass: 1
-  m_Mass: 0.037701137
+  m_Mass: 0.02120689
   m_LinearDrag: 0
   m_AngularDrag: 0.05
   m_GravityScale: 0
@@ -308,7 +308,7 @@ BoxCollider2D:
   m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 100}
+  m_Offset: {x: 0, y: 125}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0, y: 0}
@@ -319,7 +319,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 0.75, y: 200}
+  m_Size: {x: 0.75, y: 250}
   m_EdgeRadius: 0
 --- !u!70 &70302832030108454
 CapsuleCollider2D:
@@ -385,7 +385,7 @@ MonoBehaviour:
   variation: 1
   canUseWhenNoEnemy: 0
   particleName: 3
-  damage: 15
+  damage: 20
   beamWidth: 0.85
   duration: 2
   delay: 3
@@ -412,7 +412,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   side: 0
-  moveCd: 0.5
+  moveCd: 1
   variation: 0.25
   backWhenShieldDown: 1
   target: {fileID: 0}
@@ -433,8 +433,7 @@ MonoBehaviour:
   hp: 0
   hpMax: 50
   hpBar: {fileID: 0}
-  barDistance: 0.3
-  totalDamageToTake: 0
+  barDistance: 0.2
 --- !u!114 &114963730556638528
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -462,7 +461,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   shieldHp: 0
-  shieldHpMax: 150
+  shieldHpMax: 250
 --- !u!198 &198298064395696752
 ParticleSystem:
   m_ObjectHideFlags: 1
@@ -711,7 +710,7 @@ ParticleSystem:
     startSize:
       serializedVersion: 2
       minMaxState: 0
-      scalar: 0.2
+      scalar: 0.15
       minScalar: 1
       maxCurve:
         serializedVersion: 2
@@ -764,7 +763,7 @@ ParticleSystem:
     startSizeY:
       serializedVersion: 2
       minMaxState: 0
-      scalar: 0.2
+      scalar: 0.15
       minScalar: 1
       maxCurve:
         serializedVersion: 2
@@ -5461,7 +5460,7 @@ ParticleSystem:
     startSize:
       serializedVersion: 2
       minMaxState: 0
-      scalar: 0.2
+      scalar: 0.175
       minScalar: 1
       maxCurve:
         serializedVersion: 2
@@ -9942,7 +9941,7 @@ ParticleSystem:
     startSpeed:
       serializedVersion: 2
       minMaxState: 0
-      scalar: -0.15
+      scalar: -0.075
       minScalar: 5
       maxCurve:
         serializedVersion: 2
@@ -10058,7 +10057,7 @@ ParticleSystem:
     startSize:
       serializedVersion: 2
       minMaxState: 0
-      scalar: 0.08
+      scalar: 0.05
       minScalar: 1
       maxCurve:
         serializedVersion: 2
@@ -10111,7 +10110,7 @@ ParticleSystem:
     startSizeY:
       serializedVersion: 2
       minMaxState: 0
-      scalar: 0.03
+      scalar: 0.015
       minScalar: 1
       maxCurve:
         serializedVersion: 2
@@ -10581,7 +10580,7 @@ ParticleSystem:
     rateOverTime:
       serializedVersion: 2
       minMaxState: 0
-      scalar: 4
+      scalar: 3
       minScalar: 10
       maxCurve:
         serializedVersion: 2
@@ -14473,7 +14472,7 @@ ParticleSystem:
     startSpeed:
       serializedVersion: 2
       minMaxState: 0
-      scalar: -0.4
+      scalar: -0.3
       minScalar: 5
       maxCurve:
         serializedVersion: 2
@@ -14589,7 +14588,7 @@ ParticleSystem:
     startSize:
       serializedVersion: 2
       minMaxState: 0
-      scalar: 0.05
+      scalar: 0.035
       minScalar: 1
       maxCurve:
         serializedVersion: 2
@@ -14642,7 +14641,7 @@ ParticleSystem:
     startSizeY:
       serializedVersion: 2
       minMaxState: 0
-      scalar: 0.1
+      scalar: 0.075
       minScalar: 1
       maxCurve:
         serializedVersion: 2
@@ -14993,7 +14992,7 @@ ParticleSystem:
     sphericalDirectionAmount: 0
     randomPositionAmount: 0
     radius:
-      value: 0.15
+      value: 0.1
       mode: 0
       spread: 0
       speed:

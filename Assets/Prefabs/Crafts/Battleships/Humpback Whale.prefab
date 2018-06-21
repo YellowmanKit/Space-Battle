@@ -454,12 +454,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1982d3f2122fc6e4b9d53be79d5d4915, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  coolDown: 20
-  prewarm: 6
-  variation: 2
+  coolDown: 25
+  prewarm: 10
+  variation: 5
   canUseWhenNoEnemy: 0
   particleName: 5
-  damage: 100
+  damage: 300
   beamWidth: 1.25
   duration: 3
   delay: 3
@@ -485,9 +485,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8ced97eee9a1d88499a8b43fc742309c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  coolDown: 10
+  coolDown: 9
   prewarm: 3
-  variation: 2
+  variation: 3
   canUseWhenNoEnemy: 0
   projectileName: 3
   amountPreUse: 8
@@ -532,9 +532,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   hp: 0
-  hpMax: 3000
+  hpMax: 1000
   hpBar: {fileID: 0}
-  barDistance: 0.75
+  barDistance: 0.65
 --- !u!114 &114999244455772868
 MonoBehaviour:
   m_ObjectHideFlags: 1

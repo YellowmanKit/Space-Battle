@@ -82,7 +82,7 @@ c63db43c730fa2cbb8ca07de15898cb6 UnityEngine.UI.dll:UnityEngine.UI.Toggle
 f61c0793411f10cf5fbfa1473fef5ef2 UnityEngine.UI.dll:UnityEngine.UI.ToggleGroup
 86d36c43c53541d667100dc90b89cfba UnityEngine.UI.dll:UnityEngine.EventSystems.TouchInputModule
 1b8c02d0aa82fbf036a2b9b2d713eec3 UnityEngine.UI.dll:UnityEngine.UI.VerticalLayoutGroup
-e308d4e096eb7d81a0a030446ccd0a05 Assembly-CSharp.dll:.Particles
+3b9d19d5f6c28045d1edfe30e28f4b6e Assembly-CSharp.dll:.Particles
 05524b8f659e7bfe5756d1335fec24ba Assembly-CSharp.dll:.FleetManage
 7cec998754caa86d51a084e06e00292b Assembly-CSharp.dll:.Beam
 d1037da46f29fe03f504a5e0be465265 Assembly-CSharp.dll:.Shield

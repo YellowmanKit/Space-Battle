@@ -13,7 +13,7 @@ public class Crafts : Pool {
 		var allFleet = new List<GameObject> ();
 		foreach(KeyValuePair<CraftName , AvailableCraft> entry in availableCrafts){
 			var craft = entry.Value;
-			allFleet.AddRange(CreatePool (craft.craftName.ToString(),craft.prefab,10));
+			allFleet.AddRange(CreatePool (craft.craftName.ToString(),craft.prefab,5));
 		}
 		pools.Add(PoolType.All,allFleet);
 	}

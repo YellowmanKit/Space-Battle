@@ -37,8 +37,8 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1946155394919226}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 2.2, z: 0}
-  m_LocalScale: {x: 0.06, y: 0.045, z: 1}
+  m_LocalPosition: {x: -0.16420145, y: -1.526267, z: 0}
+  m_LocalScale: {x: 0.05, y: 0.035, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
@@ -91,7 +91,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   particleName: 2
   isPlayerProjectile: 0
-  damage: 30
+  damage: 25
   initSpeed: 0
   accel: 6
 --- !u!212 &212952199489767056

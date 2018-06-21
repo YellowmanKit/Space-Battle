@@ -25,7 +25,7 @@ public class Missile : Projectile {
 		circleCollider.enabled = true;
 		circleCollider.radius = explode? explosionRadius: missileRadius;
 
-		destructTime = explode? time + deadTime: float.MaxValue;
+		destructTime = explode? time + deadTime: time + 5f;
 		move.mLock = explode;
 
 		if (explode) {

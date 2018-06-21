@@ -129,8 +129,8 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1264527789008358}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: -3, z: 0}
-  m_LocalScale: {x: 0.04, y: 0.04, z: 1}
+  m_LocalPosition: {x: 2.51, y: -1.8, z: 0}
+  m_LocalScale: {x: 0.02, y: 0.02, z: 1}
   m_Children:
   - {fileID: 4000839673363642}
   - {fileID: 4356154594006980}
@@ -148,7 +148,7 @@ Rigidbody2D:
   m_Simulated: 1
   m_UseFullKinematicContacts: 0
   m_UseAutoMass: 1
-  m_Mass: 0.0035784708
+  m_Mass: 0.00070685835
   m_LinearDrag: 0
   m_AngularDrag: 0.05
   m_GravityScale: 0
@@ -224,7 +224,7 @@ MonoBehaviour:
   hp: 0
   hpMax: 5
   hpBar: {fileID: 0}
-  barDistance: 0.04
+  barDistance: 0.035
 --- !u!114 &114785039798296296
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -258,7 +258,7 @@ MonoBehaviour:
   prewarm: 1
   variation: 0.05
   canUseWhenNoEnemy: 1
-  range: 0.5
+  range: 0.25
   repairValue: 1
 --- !u!114 &114888998356195168
 MonoBehaviour:
@@ -272,11 +272,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   side: 0
-  moveCd: 0.25
+  moveCd: 0.5
   variation: 0.25
   backWhenShieldDown: 0
   target: {fileID: 0}
-  backDistance: 4.5
+  backDistance: 4
   yFree: 0
   formationX: 0
 --- !u!120 &120388597558215616
@@ -319,7 +319,7 @@ LineRenderer:
   - {x: 0, y: 0, z: 0}
   m_Parameters:
     serializedVersion: 2
-    widthMultiplier: 0.02
+    widthMultiplier: 0.01
     widthCurve:
       serializedVersion: 2
       m_Curve:

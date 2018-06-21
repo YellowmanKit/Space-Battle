@@ -8,7 +8,7 @@ public class Bar : UI {
 
 	public void InitBar(Hitpoint _hitpoint){
 		hitpoint = _hitpoint;
-		rt.sizeDelta = new Vector2 (Mathf.Clamp(15f + hitpoint.hp * 0.5f,15f,100f) , 2.5f);
+		rt.sizeDelta = new Vector2 (Mathf.Clamp(10f + hitpoint.hp * 0.25f, 10f, 100f) , 1.75f);
 	}
 
 	void Update(){

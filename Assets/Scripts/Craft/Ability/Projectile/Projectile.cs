@@ -32,7 +32,9 @@ public abstract class Projectile : Ref {
 	float multiplier { get { return repelled? -1f : 1f; } }
 	protected void SpawnOnHitEffect(){
 		var onhit = particlePool.Spawn(particleName);
-		onhit.Init (transform.position, Quaternion.Euler (new Vector3 (isPlayerProjectile ? -90f * multiplier : 90f * multiplier, 0f, 0f)));
+		if (onhit != null) {
+			onhit.Init (transform.position, Quaternion.Euler (new Vector3 (isPlayerProjectile ? -90f * multiplier : 90f * multiplier, 0f, 0f)));
+		}
 	}
 
 }

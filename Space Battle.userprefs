@@ -1,8 +1,10 @@
 ﻿<Properties StartupItem="Assembly-CSharp.csproj">
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" PreferredExecutionTarget="Unity.Instance.Unity Editor" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Scripts\Control\Parts\FleetManage.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Scripts\Control\Parts\Pool\Particles.cs">
     <Files>
-      <File FileName="Assets\Scripts\Control\Parts\FleetManage.cs" Line="42" Column="4" />
+      <File FileName="Assets\Scripts\Control\Parts\Pool\Particles.cs" Line="23" Column="1" />
+      <File FileName="Assets\Scripts\Craft\Ability\Beam.cs" Line="80" Column="4" />
+      <File FileName="Assets\Scripts\Control\Parts\Pool\Pool.cs" Line="109" Column="2" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>

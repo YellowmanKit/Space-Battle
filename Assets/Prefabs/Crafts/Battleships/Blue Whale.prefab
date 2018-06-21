@@ -428,11 +428,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   hp: 0
-  hpMax: 6000
+  hpMax: 2000
   hpBar: {fileID: 0}
   barDistance: 0.75
-  totalDamageToTake: 0
-  damageToTakePerSecond: 0
 --- !u!114 &114444425659567854
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -465,7 +463,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   shieldHp: 0
-  shieldHpMax: 2000
+  shieldHpMax: 1000
 --- !u!114 &114896620803361748
 MonoBehaviour:
   m_ObjectHideFlags: 1

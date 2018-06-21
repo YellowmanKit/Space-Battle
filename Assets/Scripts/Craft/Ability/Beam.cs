@@ -73,7 +73,9 @@ public class Beam : Ability {
 			RaycastHit2D hit = Physics2D.Raycast (transform.position, transform.up, 10f, isPlayer ? playerRaycastLayer : enemyRaycastLayer);
 			if (hit.collider != null) {
 				var particle = particlePool.Spawn (particleName);
-				particle.GetComponent<Particle>().InitBeam(hit.point, isPlayer);
+				if (particle != null) {
+					particle.GetComponent<Particle> ().InitBeam (hit.point, isPlayer);
+				}
 			}
 		}
 	}
