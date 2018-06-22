@@ -194,6 +194,7 @@ MonoBehaviour:
   hpMax: 10
   hpBar: {fileID: 0}
   barDistance: 0.05
+  noBar: 1
 --- !u!114 &114249104901545726
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -246,7 +247,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   side: 0
   moveCd: 0.5
-  variation: 0.25
+  variation: 0.2
   backWhenShieldDown: 1
   target: {fileID: 0}
   backDistance: 2.5

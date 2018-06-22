@@ -39,7 +39,15 @@ public class Bar : UI {
 			Color c = image.color;
 			c.a *= 0.9f;
 			image.color = c;
+			if (c.a <= 0.01f) {
+				gameObject.SetActive (false);
+			}
 		}
+	}
+
+	public void WakeBar(){
+		gameObject.SetActive (true);
+		nextHide = time + 3f;
 	}
 
 }

@@ -220,6 +220,7 @@ MonoBehaviour:
   hpMax: 30
   hpBar: {fileID: 0}
   barDistance: 0.075
+  noBar: 1
 --- !u!114 &114287498419738640
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -242,9 +243,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8ced97eee9a1d88499a8b43fc742309c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  coolDown: 4
+  coolDown: 6
   prewarm: 2
-  variation: 1
+  variation: 2
   canUseWhenNoEnemy: 0
   projectileName: 1
   amountPreUse: 6
@@ -269,7 +270,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   side: 0
   moveCd: 0.75
-  variation: 0.25
+  variation: 0.1
   backWhenShieldDown: 0
   target: {fileID: 0}
   backDistance: 3.5

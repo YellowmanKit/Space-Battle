@@ -229,6 +229,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   waveCount: 0
+  enemyStartCredits: 500
+  enemyCreditsForEachWave: 0
 --- !u!4 &64377601
 Transform:
   m_ObjectHideFlags: 0
@@ -870,7 +872,7 @@ MonoBehaviour:
   sprite: {fileID: 21300000, guid: 84ab48f17abd6ea4f9369631b29d0d7f, type: 3}
   craftName: 3
   description: Basic attack unit with the highest strength/cost ratio
-  cost: 20
+  cost: 25
   unlockCost: 0
   locked: 0
   playerOnly: 0
@@ -1259,7 +1261,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   gamePhase: 0
-  timeScale: 0.33
+  timeScale: 1.5
 --- !u!4 &716970607
 Transform:
   m_ObjectHideFlags: 0
@@ -1425,7 +1427,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &889576640
 RectTransform:
   m_ObjectHideFlags: 0
@@ -1538,7 +1540,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a74b34a8f57997c4dabbda2ff6cc9cc1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  credits: 300
+  credits: 1000
   craftMax: 100
 --- !u!4 &971068073
 Transform:
@@ -1865,7 +1867,7 @@ MonoBehaviour:
   sprite: {fileID: 21300000, guid: 336b2bfd902c9c244b3196d1cfba1f67, type: 3}
   craftName: 2
   description: Basic defense unit with the ability to generate energy shield
-  cost: 15
+  cost: 10
   unlockCost: 0
   locked: 0
   playerOnly: 0
@@ -2045,7 +2047,6 @@ MonoBehaviour:
   - {fileID: 1531060678639360, guid: 02b108ab3d688064bb42a506477ac19a, type: 2}
   - {fileID: 1222510674068642, guid: aa622550f84a32c43a4ff187f6267a37, type: 2}
   - {fileID: 1635546868982672, guid: ade41cce61efc25438218ab0ff3c5864, type: 2}
-  maxParticles: 30
 --- !u!1 &1480350285
 GameObject:
   m_ObjectHideFlags: 0
@@ -2312,7 +2313,7 @@ MonoBehaviour:
   sprite: {fileID: 21300000, guid: 29318d197a60d5d41b673517e8080508, type: 3}
   craftName: 1
   description: Basic support unit with the ability to repair ally craft
-  cost: 10
+  cost: 5
   unlockCost: 0
   locked: 0
   playerOnly: 0
@@ -3058,7 +3059,7 @@ MonoBehaviour:
   sprite: {fileID: 21300000, guid: 77f22d2b30c5d554aa7ece651e860f20, type: 3}
   craftName: 4
   description: Basic defense unit capable of intercepting hostile projectiles
-  cost: 25
+  cost: 35
   unlockCost: 0
   locked: 0
   playerOnly: 0
@@ -7908,7 +7909,7 @@ MonoBehaviour:
   sprite: {fileID: 21300000, guid: 643cc9e819eb0c3499b8d9b976c482be, type: 3}
   craftName: 9
   description: Ultimate attack unit with the greatest firepower
-  cost: 10000
+  cost: 5000
   unlockCost: 0
   locked: 0
   playerOnly: 0
@@ -8022,7 +8023,7 @@ MonoBehaviour:
   sprite: {fileID: 21300000, guid: 38b6ddf12ed2b8f4cbf5ce3191723a42, type: 3}
   craftName: 6
   description: Advanced attack unit equiped with powerful rocket launcher
-  cost: 250
+  cost: 300
   unlockCost: 0
   locked: 0
   playerOnly: 0
@@ -8073,7 +8074,7 @@ MonoBehaviour:
   sprite: {fileID: 21300000, guid: 139c2bd02af25424f82c9532eca2cafd, type: 3}
   craftName: 5
   description: Basic attack unit with greater fire power and durability
-  cost: 50
+  cost: 60
   unlockCost: 0
   locked: 0
   playerOnly: 0
@@ -8124,7 +8125,7 @@ MonoBehaviour:
   sprite: {fileID: 21300000, guid: 91da392daefcf7845b97d31ddaa45e1e, type: 3}
   craftName: 7
   description: Advanced defense unit equiped with energy shield and beam weapon
-  cost: 500
+  cost: 400
   unlockCost: 0
   locked: 0
   playerOnly: 0

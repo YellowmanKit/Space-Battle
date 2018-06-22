@@ -198,8 +198,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 410bf89c43670044dbe9eaedf015eef8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  maxSpeed: 1
-  accel: 0.5
+  maxSpeed: 0.75
+  accel: 0.25
   breakDistance: 1.25
   breakFactor: 0.95
   destination: {x: 0, y: 0}
@@ -231,6 +231,7 @@ MonoBehaviour:
   hpMax: 100
   hpBar: {fileID: 0}
   barDistance: 0.175
+  noBar: 0
 --- !u!114 &114953848676177944
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -244,7 +245,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   side: 0
   moveCd: 1
-  variation: 0.25
+  variation: 0.15
   backWhenShieldDown: 1
   target: {fileID: 0}
   backDistance: 3.5
@@ -261,8 +262,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8ced97eee9a1d88499a8b43fc742309c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  coolDown: 6
-  prewarm: 3
+  coolDown: 8
+  prewarm: 4
   variation: 2
   canUseWhenNoEnemy: 0
   projectileName: 2

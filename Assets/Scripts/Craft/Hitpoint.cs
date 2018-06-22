@@ -6,6 +6,7 @@ public class Hitpoint : Craft {
 	public float hp,hpMax;
 	public Bar hpBar;
 	public float barDistance;
+	public bool noBar;
 	public bool isDamaged { get { return hp < hpMax; } }
 
 	public void OnEnable(){
@@ -14,7 +15,7 @@ public class Hitpoint : Craft {
 	}
 
 	void InitHpBar(){
-		if (hpBar == null) {
+		if (!noBar && hpBar == null) {
 			hpBar = center.battleUI.CreateHpBar ();
 			hpBar.InitBar (this);
 		}
@@ -26,7 +27,9 @@ public class Hitpoint : Craft {
 			return;
 		}
 		hp -= damage;
-		hpBar.nextHide = time + 3f;
+		if (!noBar) {
+			hpBar.WakeBar ();
+		}
 		state.OnHit ();
 		if (hp <= 0) {
 			damageToTakePerSecond = 0f;
@@ -40,7 +43,9 @@ public class Hitpoint : Craft {
 			return;
 		}
 		hp += repairValue;
-		hpBar.nextHide = time + 3f;
+		if (!noBar) {
+			hpBar.WakeBar ();
+		}
 		state.OnHit ();
 	}
 
@@ -68,7 +73,7 @@ public class Hitpoint : Craft {
 
 			var damageToTake = damageToTakePerSecond * 0.2f;
 			if (shield != null && !shield.isDown) {
-				shield.TakeDamage (damageToTake);
+				shield.TakeDamage (damageToTake * 0.5f);
 			} else {
 				TakeDamage (damageToTake);
 			}

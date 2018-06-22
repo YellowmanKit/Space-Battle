@@ -54,6 +54,15 @@ public class Center : MonoBehaviour {
 		craftPool.Init ();
 	}
 
+	public AvailableCraft availCraftByName(CraftName craftName){
+		foreach (KeyValuePair<CraftName, AvailableCraft> pair in availableCrafts) {
+			if (pair.Value.craftName == craftName) {
+				return pair.Value;
+			}
+		}
+		return null;
+	}
+
 	public static bool OutOfArea(Transform transform){
 		return (
 		transform.position.x > Center.xMax

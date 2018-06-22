@@ -33,7 +33,6 @@ public class Beam : Ability {
 		BeamCollider ();
 		BeamParticle ();
 		DeadLock ();
-		//BeamDamage ();
 	}
 
 	ParticleSystem ps { get { return GetComponent<ParticleSystem>(); } }
@@ -54,15 +53,12 @@ public class Beam : Ability {
 	}
 
 	float remainDuration { get { return shootTime + delay + duration - time; } }
-	//List<GameObject> targetList = new List<GameObject>();
 	void OnTriggerEnter2D(Collider2D other){
 		other.GetComponentInParent<Hitpoint> ().TakeDamageOverTime (damage * remainDuration / duration , remainDuration);
-		//targetList.Add (other.gameObject);
 	}
 
 	void OnTriggerExit2D(Collider2D other){
 		other.GetComponentInParent<Hitpoint> ().RemoveDamageOverTime (damage * remainDuration / duration , remainDuration);
-		//targetList.Remove (other.gameObject);
 	}
 
 	float randomize { get { return Random.Range (-0.05f, 0.05f); } }
@@ -90,20 +86,5 @@ public class Beam : Ability {
 			deadlockIsSet = false;
 		}
 	}
-
-	/*float nextDamage;
-	void BeamDamage(){
-		if (beamIsShooting && time > nextDamage) {
-			for(int i = targetList.Count - 1;i >= 0; i--) {
-				//Debug.Log (targetList [i].name);
-				if (!targetList[i].activeSelf || targetList[i].GetComponentInParent<State>().destroyed) {
-					targetList.RemoveAt (i);
-				} else {
-					targetList[i].BroadcastMessage ("TakeDamage", damage / (damageDivide > 0 ? damageDivide : 1));
-				}
-			}
-			nextDamage = time + duration / (damageDivide > 0? damageDivide: 1);
-		}
-	}*/
 
 }

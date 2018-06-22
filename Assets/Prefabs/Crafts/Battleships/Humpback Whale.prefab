@@ -436,7 +436,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 410bf89c43670044dbe9eaedf015eef8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  maxSpeed: 0.5
+  maxSpeed: 0.4
   accel: 0.1
   breakDistance: 0.5
   breakFactor: 0.95
@@ -514,7 +514,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   side: 0
   moveCd: 1
-  variation: 0.25
+  variation: 0.2
   backWhenShieldDown: 0
   target: {fileID: 0}
   backDistance: 3
@@ -535,6 +535,7 @@ MonoBehaviour:
   hpMax: 1000
   hpBar: {fileID: 0}
   barDistance: 0.65
+  noBar: 0
 --- !u!114 &114999244455772868
 MonoBehaviour:
   m_ObjectHideFlags: 1

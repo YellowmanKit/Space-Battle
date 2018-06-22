@@ -1,60 +1,66 @@
 ﻿using System.Collections;
+using System.Collections.Generic;
 using UnityEngine;
 
 public class Wave : Control {
 
-	public int waveCount;
+	public int waveCount,enemyStartCredits;
+
+	void Start(){
+		InitAvailEnemies ();
+		enemyCreditsForEachWave = enemyStartCredits;
+	}
 
 	public void NextWave(){
-		FleetPrewarm (Side.Player);
+		fleetManage.PrewarmFleet (craftPool.pools [SideToPoolType(Side.Player)]);
 
 		waveCount++;
-		//craftPool.Spawn (CraftName.Bat, Side.Enemy);
-		for (int i = 0; i < Mathf.Clamp(3 * waveCount, 6, 40); i++) {
-			craftPool.Spawn (CraftName.Bat, Side.Enemy);
-		}
-		for (int i = 0; i <  Mathf.Clamp(Mathf.Floor(waveCount - 1), 1, 30); i++) {
-			craftPool.Spawn (CraftName.Beatle, Side.Enemy);
-			craftPool.Spawn (CraftName.Pigeon, Side.Enemy);
-			craftPool.Spawn (CraftName.Eagle, Side.Enemy);
-		}
-		for (int i = 0; i < Mathf.Clamp((int)Mathf.Floor(((waveCount - 3) / 2)),0,20); i++) {
-			craftPool.Spawn (CraftName.Bee, Side.Enemy);
-			craftPool.Spawn (CraftName.Eel, Side.Enemy);
-		}
-		for (int i = 0; i < Mathf.Clamp((int)Mathf.Floor(((waveCount - 5) / 3)),0,15); i++) {
-			craftPool.Spawn (CraftName.Dolphin, Side.Enemy);
-		}
-		/*for (int i = 0; i < Mathf.Clamp((int)Mathf.Floor((waveCount / 15)),0,3); i++) {
-			craftPool.Spawn (CraftName.HumpbackWhale, Side.Enemy);
-		}*/
-		SpawnBattleship ();
+		SpawnEnemyWave ();
 
 		search.SortFleetListByXPosition (Side.Enemy);
-		FleetPrewarm (Side.Enemy);
-	}
-
-	int battleshipWave = 10;
-	float count = 1;
-	void SpawnBattleship(){
-		if (waveCount == battleshipWave) {
-			battleshipWave += 5;
-			for (int i = 0; i < Mathf.Floor(count); i++) {
-				craftPool.Spawn (CraftName.HumpbackWhale, Side.Enemy);
-			}
-			count += 0.5f;
-		}
-	}
-
-	void FleetPrewarm(Side side){
-		fleetManage.PrewarmFleet (craftPool.pools [SideToPoolType(side)]);
+		fleetManage.PrewarmFleet (craftPool.pools [SideToPoolType(Side.Enemy)]);
 	}
 
 	public void WaveCleared(){
 		recruit.credits += 250 * waveCount;
+		enemyCreditsForEachWave += 100 * waveCount;
+
 		fleetManage.RechargeFleet (craftPool.pools [PoolType.Player]);
 		fleetManage.SetFormation (Side.Player);
 		main.SetPhase (Phase.Recruit);
+	}
+
+	List<AvailableCraft> availEnemies = new List<AvailableCraft>();
+	void InitAvailEnemies(){
+		foreach (KeyValuePair<CraftName, AvailableCraft> pair in center.availableCrafts) {
+			if (!pair.Value.playerOnly) {
+				availEnemies.Add (pair.Value);
+			}
+		}
+	}
+
+	public int enemyCreditsForEachWave;
+	int enemyCredits;
+	void SpawnEnemyWave(){
+		enemyCredits = enemyCreditsForEachWave;
+		for (int i = 0; i < 1000; i++) {
+			if (enemyCredits < 5) {
+				break;
+			}
+			if (enemyCredits > 10000) {
+				SpawnEnemy (center.availCraftByName(CraftName.HumpbackWhale));
+				continue;
+			}
+			var craftToSpawn = availEnemies [Random.Range (0, availEnemies.Count - 1)];
+			if (craftToSpawn.cost < enemyCredits) {
+				SpawnEnemy (craftToSpawn);
+			}
+		}
+	}
+
+	void SpawnEnemy(AvailableCraft craftToSpawn){
+		craftPool.Spawn (craftToSpawn.craftName, Side.Enemy);
+		enemyCredits -= craftToSpawn.cost;
 	}
 
 }
