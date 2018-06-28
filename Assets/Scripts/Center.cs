@@ -19,7 +19,7 @@ public class Center : MonoBehaviour {
 	public Panel panel;
 	public BattleUI battleUI;
 	public CustomInput input;
-
+	public CustomCamera cusCam;
 
 	public Transform availableCraftsTransform;
 	public Dictionary<CraftName, AvailableCraft> availableCrafts = new Dictionary<CraftName, AvailableCraft>();
@@ -31,15 +31,35 @@ public class Center : MonoBehaviour {
 	}
 
 	void Start(){
-		InitArea ();
 		InitAvailableCrafts ();
+		SetArea ();
 	}
 
-	void InitArea(){
-		Center.xMin = -2.75f;
-		Center.xMax = 2.75f;
-		Center.yMin = -5f;
-		Center.yMax = 5f;
+	//public float scale { get { return Mathf.Clamp( (craftPool.pools [PoolType.Player].Count / 100f) + fleetManage.amountOfHughCrafts * 0.25f, 0f, 1f); } }
+	public float scale;
+	public float[] scaleValueForEachClass;
+	public void UpdateScale(){
+		scale = 0;
+		foreach (KeyValuePair<CraftName,List<GameObject>> pair in craftPool.craftsList[Side.Player]) {
+			scale += pair.Value.Count * scaleValueForEachClass[(int)Craft.CraftNameToClass(pair.Key)];
+		}
+		scale = Mathf.Clamp (scale, 0f, 1f);
+		SetArea ();
+	}
+
+	public float minWidth,maxWidth,minHeight,maxHeight;
+	public float width,height;
+	public void SetArea(){
+		width = minWidth + Mathf.Clamp ((maxWidth - minWidth) * scale, 0f, maxWidth - minWidth);
+		height = minHeight + Mathf.Clamp ((maxHeight - minHeight) * scale, 0f, maxHeight - minHeight);
+		//Debug.Log (width + " " + height);
+
+		Center.xMin = -width / 2f;
+		Center.xMax = width / 2f;
+		Center.yMin = -height / 2f;
+		Center.yMax = height / 2f;
+
+		cusCam.UpdateCamera ();
 	}
 
 	void InitAvailableCrafts(){

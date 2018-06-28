@@ -24,13 +24,23 @@ public class Move : Craft {
 			return;
 		}
 		Vector2 diff = input.target - (Vector2)transform.position;
+		Vector2 forceToAdd = Vector2.zero;
 		if (!isMissile && isPlayer && input.lastTouch > time - 0.25f && diff.magnitude < 1f) {
-			rb.AddForce (Vector3.Normalize(diff) * engineForce * -1f / Mathf.Clamp(diff.magnitude * 2f,0.05f,float.MaxValue));
+			forceToAdd = Vector3.Normalize(diff) * engineForce * -1f / Mathf.Clamp(diff.magnitude * 2f,0.05f,float.MaxValue);
 		} else {
 			diff = destination - (Vector2)transform.position;
-			rb.AddForce (Vector3.Normalize(diff) * engineForce * Mathf.Clamp(diff.magnitude,1f,3f));
+			forceToAdd = Vector3.Normalize(diff) * engineForce * Mathf.Clamp(diff.magnitude,1f,3f);
 		}
+		rb.AddForce (forceToAdd);
+		//Rotation (forceToAdd);
 	}
+
+	/*public bool rotateByMovement;
+	void Rotation(Vector2 forceToAdd){
+		if (rotateByMovement) {
+			transform.up = new Vector3 (forceToAdd.x, forceToAdd.y, 0f);
+		}
+	}*/
 
 	bool breaking { get { return (breakDistance > 0f && Vector3.Distance (transform.position, destination) < breakDistance) || rb.velocity.magnitude > maxSpeed; } }
 	void Break(){

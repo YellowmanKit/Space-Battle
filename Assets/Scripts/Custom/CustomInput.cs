@@ -1,5 +1,6 @@
 ﻿using System.Collections;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class CustomInput : Ref {
 
@@ -12,6 +13,17 @@ public class CustomInput : Ref {
 	void Update(){
 		GetTargetByTouch ();
 		GetTargetByClick ();
+
+		HandleKey ();
+	}
+
+	void HandleKey(){
+		if(Input.GetKey(KeyCode.Escape)){
+			SceneManager.LoadScene ("main");
+		}
+		if(Input.GetKey(KeyCode.Space)){
+			Time.timeScale = main.timeScale;
+		}
 	}
 
 	void GetTargetByTouch(){
@@ -46,6 +58,9 @@ public class CustomInput : Ref {
 
 	void EmitOnclick (){
 		onClick.transform.position = new Vector3 (target.x, target.y, 0f);
+		var psmain = onClick.GetComponent<ParticleSystem> ().main;
+		psmain.startSize = 0.1f + 0.4f * center.scale;
+
 		onClick.Play ();
 	}
 }

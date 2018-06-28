@@ -56,14 +56,14 @@ public class Panel : UI {
 			StartCoroutine (BattleMessageRoutine ());
 			break;
 		}
-		UpdateTopMessage ();
-		recruitPanel.UpdateInformation ();
-		UpdateRecruitButton ();
+
+		UpdatePanel ();
 	}
 
 	public void UpdatePanel(){
 		UpdateTopMessage ();	
 		UpdateRecruitButton ();
+		UpdateDismissButton ();
 		recruitPanel.UpdateInformation ();
 	}
 
@@ -78,6 +78,14 @@ public class Panel : UI {
 			(recruitPanel.selectedChoice == null || !recruitPanel.selectedAvailableCraft.locked)? 
 			"Recruit (" + recruit.craftCount + "/" + recruit.craftMax + ")":
 			"Unlock";
+	}
+
+	public void UpdateDismissButton(){
+		var craftAmount = recruitPanel.selectedChoice != null ? (craftPool.craftsList [Side.Player].ContainsKey (recruitPanel.selectedChoice.availableCraft.craftName) ?
+			craftPool.craftsList [Side.Player] [recruitPanel.selectedChoice.availableCraft.craftName].Count : 0) : 0;
+		
+		panel.messages [(int)Message.DismissButton].text = 
+			"Dismiss (" + craftAmount + ")";
 	}
 
 	IEnumerator BattleMessageRoutine(){

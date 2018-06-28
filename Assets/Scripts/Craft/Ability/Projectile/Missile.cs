@@ -52,7 +52,9 @@ public class Missile : Projectile {
 
 	void Destruction(){
 		if (time > destructTime) {
-			SelfDestruct ();
+			SpawnOnHitEffect ();
+			SetMissile (true);
+			destructTime = float.MaxValue;
 		}
 	}
 

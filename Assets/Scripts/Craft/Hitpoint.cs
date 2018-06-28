@@ -5,8 +5,7 @@ public class Hitpoint : Craft {
 
 	public float hp,hpMax;
 	public Bar hpBar;
-	public float barDistance;
-	public bool noBar;
+	public float barDistance,hideBarOnScale;
 	public bool isDamaged { get { return hp < hpMax; } }
 
 	public void OnEnable(){
@@ -14,10 +13,13 @@ public class Hitpoint : Craft {
 		InitHpBar ();
 	}
 
+	bool noBar { get { return hideBarOnScale != 0 && hideBarOnScale < center.scale; } }
 	void InitHpBar(){
-		if (!noBar && hpBar == null) {
+		if (hpBar == null) {
 			hpBar = center.battleUI.CreateHpBar ();
 			hpBar.InitBar (this);
+		} else {
+			hpBar.Reset ();
 		}
 	}
 

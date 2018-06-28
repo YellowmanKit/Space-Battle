@@ -11,13 +11,14 @@ public class Beam : Ability {
 	void OnEnable(){
 		shootTime = float.MinValue;
 		gameObject.layer = LayerMask.NameToLayer ((isPlayer? "Player":"Enemy") + "Beam");
-		InitBeamParticle ();
+		beamCollider.size = new Vector2 (0f, beamCollider.size.y);
 	}
 
 	float parentRotationZ { get { return Mathf.Deg2Rad * transform.parent.localRotation.eulerAngles.z; } }
 	void InitBeamParticle(){
 		var psmain = GetComponent<ParticleSystem> ().main;
 		psmain.startRotation = parentRotationZ;
+		psmain.startSizeY = 5f + 25f * center.scale;
 	}
 
 	protected override bool shallUse(){
@@ -25,6 +26,7 @@ public class Beam : Ability {
 	}
 
 	protected override void UseAbility(){
+		InitBeamParticle ();
 		ShootBeam ();
 	}
 
@@ -35,30 +37,37 @@ public class Beam : Ability {
 		DeadLock ();
 	}
 
-	ParticleSystem ps { get { return GetComponent<ParticleSystem>(); } }
 	float shootTime;
 	void ShootBeam(){
 		ps.Play ();
-		beamCollider.size = new Vector2 (beamWidth, beamCollider.size.y);
 		shootTime = time;
+		shallInitCollider = true;
 	}
 
+	bool shallInitCollider;
 	bool beamIsShooting { get { return time > shootTime + delay && time < shootTime + delay + duration; } }
 	BoxCollider2D beamCollider { get { return GetComponent<BoxCollider2D> (); } }
 	void BeamCollider(){
-		beamCollider.enabled = beamIsShooting;
+		//beamCollider.enabled = beamIsShooting;
 		if (beamIsShooting) {
-			beamCollider.size = new Vector2 (Mathf.Clamp (beamCollider.size.x - beamWidth * deltaTime / duration, 0.1f, float.MaxValue), beamCollider.size.y);
+			if (shallInitCollider) {
+				beamCollider.size = new Vector2 (beamWidth, beamCollider.size.y);
+				shallInitCollider = false;
+			} else {
+				beamCollider.size = new Vector2 (Mathf.Clamp (beamCollider.size.x - beamWidth * deltaTime / duration, 0.1f, float.MaxValue), beamCollider.size.y);
+			}
+		} else {
+			beamCollider.size = new Vector2 (0f , beamCollider.size.y);
 		}
 	}
 
 	float remainDuration { get { return shootTime + delay + duration - time; } }
 	void OnTriggerEnter2D(Collider2D other){
-		other.GetComponentInParent<Hitpoint> ().TakeDamageOverTime (damage * remainDuration / duration , remainDuration);
+		other.GetComponentInParent<Hitpoint> ().TakeDamageOverTime (damage * remainDuration / duration, remainDuration);
 	}
 
 	void OnTriggerExit2D(Collider2D other){
-		other.GetComponentInParent<Hitpoint> ().RemoveDamageOverTime (damage * remainDuration / duration , remainDuration);
+		other.GetComponentInParent<Hitpoint> ().RemoveDamageOverTime (damage * remainDuration / duration, remainDuration);
 	}
 
 	float randomize { get { return Random.Range (-0.05f, 0.05f); } }

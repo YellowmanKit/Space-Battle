@@ -9,14 +9,11 @@ public abstract class Ability : Ref {
 	protected Rigidbody2D rb { get { return GetComponentInParent<Rigidbody2D> (); } }
 	protected Pilot pilot { get { return GetComponentInParent<Pilot>(); } }
 	protected State state { get { return GetComponentInParent<State>(); } }
+	protected ParticleSystem ps { get { return GetComponent<ParticleSystem>(); } }
 
 	float randomize { get { return Random.Range (-variation, variation); } }
 
-	void OnEnable(){
-		Prewarm ();
-	}
-
-	void Prewarm(){
+	protected void Prewarm(){
 		nextUse = time + prewarm + randomize;
 	}
 

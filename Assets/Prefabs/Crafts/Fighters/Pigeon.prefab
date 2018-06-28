@@ -267,10 +267,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   hp: 0
-  hpMax: 20
+  hpMax: 25
   hpBar: {fileID: 0}
   barDistance: 0.05
-  noBar: 1
+  hideBarOnScale: 0.5
 --- !u!114 &114191698497565048
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -296,11 +296,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   maxSpeed: 1.5
   accel: 0.75
-  breakDistance: 1.5
+  breakDistance: 1
   breakFactor: 0.95
   destination: {x: 0, y: 0}
   mLock: 0
   isMissile: 0
+  rotateByMovement: 0
 --- !u!114 &114352633586990944
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -317,7 +318,7 @@ MonoBehaviour:
   variation: 0.1
   backWhenShieldDown: 0
   target: {fileID: 0}
-  backDistance: 2.75
+  backPercentage: 0.35
   yFree: 0
   formationX: 0
 --- !u!114 &114705667865433890
@@ -331,11 +332,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2f63d08688ad03640b334011d4c5d799, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  coolDown: 0.3
+  coolDown: 0.25
   prewarm: 1
   variation: 0
   canUseWhenNoEnemy: 1
-  range: 0.4
+  range: 0.5
 --- !u!114 &114893914842405074
 MonoBehaviour:
   m_ObjectHideFlags: 1

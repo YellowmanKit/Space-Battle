@@ -91,8 +91,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   particleName: 0
   isPlayerProjectile: 0
-  damage: 7
-  initSpeed: 6
+  startParticle: {fileID: 0}
+  damage: 5
+  initSpeed: 4
   accel: 0
 --- !u!212 &212241904847216400
 SpriteRenderer:

@@ -12,15 +12,6 @@ public class Main : Control {
 		SetPhase (Phase.Entry);
 	}
 
-	void Update(){
-		if(Input.GetKey(KeyCode.Escape)){
-			SceneManager.LoadScene ("main");
-		}
-		if(Input.GetKey(KeyCode.Space)){
-			Time.timeScale = timeScale;
-		}
-	}
-
 	public void HandleBotButtonPressed(){
 
 		switch (gamePhase) {

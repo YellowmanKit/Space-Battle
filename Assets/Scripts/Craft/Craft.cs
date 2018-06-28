@@ -26,4 +26,28 @@ public abstract class Craft : Ref {
 
 	public bool isPlayer { get { return pilot.side == Side.Player; } }
 
+	public static Class CraftNameToClass(CraftName craftName){
+		switch (craftName) {
+		case CraftName.Bee:
+			return Class.Drone;
+		case CraftName.Beatle:
+			return Class.Drone;
+		case CraftName.Bat:
+			return Class.Fighter;
+		case CraftName.Pigeon:
+			return Class.Fighter;
+		case CraftName.Eagle:
+			return Class.Fighter;
+		case CraftName.Eel:
+			return Class.Cruiser;
+		case CraftName.Dolphin:
+			return Class.Cruiser;
+		case CraftName.HumpbackWhale:
+			return Class.Battleship;
+		case CraftName.BlueWhale:
+			return Class.Battleship;
+		}
+		return Class.Drone;
+	}
+
 }

@@ -23,6 +23,7 @@ public class RecruitChoice : UI {
 	void OnRecruitChoiceClicked(){
 		panel.recruitPanel.OnChoiceSelected(this);
 		SetChoice ();
+		panel.UpdatePanel ();
 	}
 
 	public void SetChoice(){

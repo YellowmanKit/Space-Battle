@@ -21,13 +21,15 @@ public class Wave : Control {
 		fleetManage.PrewarmFleet (craftPool.pools [SideToPoolType(Side.Enemy)]);
 	}
 
+	public int playerCreditGrowth, enemyCreditGrowth;
 	public void WaveCleared(){
-		recruit.credits += 250 * waveCount;
-		enemyCreditsForEachWave += 100 * waveCount;
+		recruit.credits += playerCreditGrowth * waveCount;
+		enemyCreditsForEachWave += enemyCreditGrowth * waveCount;
 
 		fleetManage.RechargeFleet (craftPool.pools [PoolType.Player]);
 		fleetManage.SetFormation (Side.Player);
 		main.SetPhase (Phase.Recruit);
+		center.UpdateScale ();
 	}
 
 	List<AvailableCraft> availEnemies = new List<AvailableCraft>();

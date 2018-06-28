@@ -11,10 +11,17 @@ public class ProjectileLauncher : Ability {
 	}
 
 	public int amountPreUse;
+	public float delay;
+	public ParticleSystem shootEffect;
+	public bool shootEffectBeforeDelay;
 	float nextShoot;
 	protected override void UseAbility(){
 		amountToShoot += amountPreUse;
-		nextShoot = time;
+		nextShoot = time + delay;
+
+		if (shootEffect != null && shootEffectBeforeDelay) {
+			shootEffect.Play ();
+		}
 	}
 
 	void FixedUpdate(){
@@ -43,6 +50,12 @@ public class ProjectileLauncher : Ability {
 		var localScale = transform.parent.localScale;
 		proj.transform.position = transform.position;
 		proj.transform.Translate (new Vector2(shotSpawns [count].x * localScale.x * multiplier, shotSpawns [count].y * localScale.y * multiplier));
+
+		if (shootEffect != null  && !shootEffectBeforeDelay) {
+			shootEffect.transform.position = proj.transform.position;
+			shootEffect.Play ();
+		}
+
 		proj.transform.rotation = transform.rotation;
 
 		if (!isMissile) {

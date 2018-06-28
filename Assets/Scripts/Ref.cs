@@ -11,6 +11,7 @@ public abstract class Ref : MonoBehaviour {
 
 	protected Panel panel { get { return center.panel; } }
 	protected CustomInput input { get { return center.input; } }
+	protected CustomCamera cusCam { get { return center.cusCam; } }
 
 	protected Crafts craftPool { get { return center.craftPool; } }
 	protected Projectiles projectilePool { get { return center.projectilePool; } }

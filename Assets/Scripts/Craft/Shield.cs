@@ -44,7 +44,8 @@ public class Shield : Alpha {
 	}
 
 	protected override float targetAlpha (){
-		return !isDown? 0.05f: 0f;
+		//return !isDown? 0.05f: 0f;
+		return 0f;
 	}
 
 	protected override void OnAlphaZero (){

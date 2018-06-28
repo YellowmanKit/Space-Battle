@@ -194,7 +194,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   particleName: 4
   isPlayerProjectile: 0
-  damage: 25
+  damage: 20
   initSpeed: 0
   accel: 0
   missileRadius: 0.06

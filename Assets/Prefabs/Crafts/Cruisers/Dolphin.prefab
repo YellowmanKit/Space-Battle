@@ -159,7 +159,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1077731595883078}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: -2.67, z: 0}
+  m_LocalPosition: {x: 0, y: -2.61, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4117577825294276}
@@ -173,8 +173,8 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1711331571435592}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -0.56, y: -1.8, z: 0}
-  m_LocalScale: {x: 0.06, y: 0.06, z: 1}
+  m_LocalPosition: {x: -0.57, y: 0.369, z: 0}
+  m_LocalScale: {x: 0.1, y: 0.11, z: 1}
   m_Children:
   - {fileID: 4386531896001076}
   - {fileID: 4683150179087730}
@@ -190,7 +190,7 @@ Transform:
   m_GameObject: {fileID: 1084514038841838}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0.15, z: 0}
-  m_LocalScale: {x: 0.75, y: 1.75, z: 1}
+  m_LocalScale: {x: 0.7, y: 1.6, z: 1}
   m_Children: []
   m_Father: {fileID: 4364321449712428}
   m_RootOrder: 0
@@ -228,7 +228,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1803559694564008}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 3.3, z: 0}
+  m_LocalPosition: {x: 0, y: 3, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4555906906655728}
@@ -247,7 +247,7 @@ Rigidbody2D:
   m_Simulated: 1
   m_UseFullKinematicContacts: 0
   m_UseAutoMass: 1
-  m_Mass: 0.02120689
+  m_Mass: 0.065068044
   m_LinearDrag: 0
   m_AngularDrag: 0.05
   m_GravityScale: 0
@@ -302,7 +302,7 @@ BoxCollider2D:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1803559694564008}
-  m_Enabled: 0
+  m_Enabled: 1
   m_Density: 1
   m_Material: {fileID: 0}
   m_IsTrigger: 1
@@ -319,7 +319,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 0.75, y: 250}
+  m_Size: {x: 0.8, y: 250}
   m_EdgeRadius: 0
 --- !u!70 &70302832030108454
 CapsuleCollider2D:
@@ -349,7 +349,7 @@ CapsuleCollider2D:
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}
-  m_Size: {x: 4.08, y: 5}
+  m_Size: {x: 4.08, y: 4.5}
   m_Direction: 0
 --- !u!114 &114448997526804758
 MonoBehaviour:
@@ -386,7 +386,7 @@ MonoBehaviour:
   canUseWhenNoEnemy: 0
   particleName: 3
   damage: 20
-  beamWidth: 0.85
+  beamWidth: 0.8
   duration: 2
   delay: 3
 --- !u!114 &114655888075598102
@@ -416,7 +416,7 @@ MonoBehaviour:
   variation: 0.15
   backWhenShieldDown: 1
   target: {fileID: 0}
-  backDistance: 3
+  backPercentage: 0.35
   yFree: 0
   formationX: 0
 --- !u!114 &114929300077525482
@@ -433,8 +433,8 @@ MonoBehaviour:
   hp: 0
   hpMax: 50
   hpBar: {fileID: 0}
-  barDistance: 0.2
-  noBar: 0
+  barDistance: 0.25
+  hideBarOnScale: 0
 --- !u!114 &114963730556638528
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -9817,7 +9817,7 @@ ParticleSystem:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1376556611976916}
   serializedVersion: 5
-  lengthInSec: 1
+  lengthInSec: 1.5
   simulationSpeed: 1
   stopAction: 0
   looping: 1
@@ -9889,7 +9889,7 @@ ParticleSystem:
     startLifetime:
       serializedVersion: 2
       minMaxState: 0
-      scalar: 1.25
+      scalar: 1.5
       minScalar: 5
       maxCurve:
         serializedVersion: 2
@@ -10058,7 +10058,7 @@ ParticleSystem:
     startSize:
       serializedVersion: 2
       minMaxState: 0
-      scalar: 0.05
+      scalar: 0.06
       minScalar: 1
       maxCurve:
         serializedVersion: 2
@@ -10111,7 +10111,7 @@ ParticleSystem:
     startSizeY:
       serializedVersion: 2
       minMaxState: 0
-      scalar: 0.015
+      scalar: 0.02
       minScalar: 1
       maxCurve:
         serializedVersion: 2

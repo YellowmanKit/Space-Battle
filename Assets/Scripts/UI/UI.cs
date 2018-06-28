@@ -14,7 +14,8 @@ public enum Message {
 	Mid,
 	BotButton,
 	RecruitDesc,
-	RecruitButton
+	RecruitButton,
+	DismissButton
 }
 
 public abstract class UI : Ref {

@@ -129,8 +129,8 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1757168745407264}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -0.16, y: -1.8, z: 0}
-  m_LocalScale: {x: 0.08, y: 0.08, z: 1}
+  m_LocalPosition: {x: -0.185, y: 0.181, z: 0}
+  m_LocalScale: {x: 0.15, y: 0.19, z: 1}
   m_Children:
   - {fileID: 4420318841257014}
   - {fileID: 4820567226232846}
@@ -148,7 +148,7 @@ Rigidbody2D:
   m_Simulated: 1
   m_UseFullKinematicContacts: 0
   m_UseAutoMass: 1
-  m_Mass: 0.009449011
+  m_Mass: 0.040857777
   m_LinearDrag: 0
   m_AngularDrag: 0.05
   m_GravityScale: 0
@@ -170,7 +170,7 @@ CapsuleCollider2D:
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}
-  m_Size: {x: 0.58, y: 2.67}
+  m_Size: {x: 0.58, y: 2.57}
   m_Direction: 0
 --- !u!114 &114159743429467190
 MonoBehaviour:
@@ -205,6 +205,7 @@ MonoBehaviour:
   destination: {x: 0, y: 0}
   mLock: 0
   isMissile: 0
+  rotateByMovement: 0
 --- !u!114 &114487122524030340
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -228,10 +229,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   hp: 0
-  hpMax: 100
+  hpMax: 125
   hpBar: {fileID: 0}
   barDistance: 0.175
-  noBar: 0
+  hideBarOnScale: 0
 --- !u!114 &114953848676177944
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -248,7 +249,7 @@ MonoBehaviour:
   variation: 0.15
   backWhenShieldDown: 1
   target: {fileID: 0}
-  backDistance: 3.5
+  backPercentage: 0.5
   yFree: 0
   formationX: 0
 --- !u!114 &114975431019641990
@@ -268,6 +269,9 @@ MonoBehaviour:
   canUseWhenNoEnemy: 0
   projectileName: 2
   amountPreUse: 4
+  delay: 0
+  shootEffect: {fileID: 0}
+  shootEffectBeforeDelay: 0
   shootSeperation: 0.15
   isMissile: 0
   shotSpawns:
@@ -526,8 +530,8 @@ ParticleSystem:
     startSize:
       serializedVersion: 2
       minMaxState: 3
-      scalar: 0.09
-      minScalar: 0.06
+      scalar: 0.12
+      minScalar: 0.1
       maxCurve:
         serializedVersion: 2
         m_Curve:
@@ -579,8 +583,8 @@ ParticleSystem:
     startSizeY:
       serializedVersion: 2
       minMaxState: 3
-      scalar: 0.1
-      minScalar: 0.075
+      scalar: 0.12
+      minScalar: 0.1
       maxCurve:
         serializedVersion: 2
         m_Curve:

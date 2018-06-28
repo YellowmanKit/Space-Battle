@@ -15,7 +15,7 @@ public class Pilot : Behav {
 	}
 
 	void Init(){
-		transform.position = new Vector3 (Random.Range (Center.xMin, Center.xMax), isPlayer ? Center.yMin - (backDistance + randomize) : Center.yMax + (backDistance + randomize), 0f);
+		transform.position = new Vector3 (Random.Range (Center.xMin, Center.xMax), isPlayer ? Center.yMin + (distanceFromFrontline + randomize) : Center.yMax + (distanceFromFrontline + randomize), 0f);
 		transform.rotation = Quaternion.Euler (new Vector3 (0f, 0f, side == Side.Enemy? 180f:0f));
 	}
 	
@@ -28,14 +28,13 @@ public class Pilot : Behav {
 	void SearchForTarget(){
 		if (target == null || !target.gameObject.activeSelf) {
 			target = search.FindClosestTarget (gameObject, isPlayer? Side.Enemy : Side.Player);
-			yFree = false;
 		}
 	}
 
-	public float backDistance;
+	public float backPercentage;
 	public bool yFree;
-	float distanceFromFrontline { get { return side == Side.Enemy ? backDistance : -backDistance; } }
-	float yPosition { get { return (backWhenShieldDown && shield != null && shield.isDown)? isPlayer? Center.yMin + 0.5f + randomize: Center.yMax - 0.5f + randomize : Random.Range (distanceFromFrontline - 0.5f, distanceFromFrontline + 0.5f); } }
+	float distanceFromFrontline { get { return side == Side.Enemy ? Center.yMax * backPercentage : Center.yMax * backPercentage * -1f; } }
+	float yPosition { get { return (backWhenShieldDown && shield != null && shield.isDown)? isPlayer? Center.yMin * 0.85f + randomize: Center.yMax * 0.85f + randomize : distanceFromFrontline + randomize; } }
 	float nextMove;
 	void Destination(){
 		if (time < nextMove) {

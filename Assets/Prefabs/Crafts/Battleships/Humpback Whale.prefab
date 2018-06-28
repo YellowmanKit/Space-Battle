@@ -219,7 +219,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1877820384292788}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 3.15, z: 0}
+  m_LocalPosition: {x: 0, y: 3, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4090452062581708}
@@ -287,8 +287,8 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1283490662672860}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: -3, z: 0}
-  m_LocalScale: {x: 0.175, y: 0.2, z: 1}
+  m_LocalPosition: {x: -1.132, y: 0.194, z: 0}
+  m_LocalScale: {x: 0.3, y: 0.35, z: 1}
   m_Children:
   - {fileID: 4581329053268980}
   - {fileID: 4144173211988594}
@@ -308,7 +308,7 @@ Rigidbody2D:
   m_Simulated: 1
   m_UseFullKinematicContacts: 0
   m_UseAutoMass: 1
-  m_Mass: 0.20735586
+  m_Mass: 0.62257236
   m_LinearDrag: 0
   m_AngularDrag: 0.05
   m_GravityScale: 0
@@ -363,7 +363,7 @@ BoxCollider2D:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1877820384292788}
-  m_Enabled: 0
+  m_Enabled: 1
   m_Density: 1
   m_Material: {fileID: 0}
   m_IsTrigger: 1
@@ -491,6 +491,9 @@ MonoBehaviour:
   canUseWhenNoEnemy: 0
   projectileName: 3
   amountPreUse: 8
+  delay: 0
+  shootEffect: {fileID: 0}
+  shootEffectBeforeDelay: 0
   shootSeperation: 0.15
   isMissile: 1
   shotSpawns:
@@ -517,7 +520,7 @@ MonoBehaviour:
   variation: 0.2
   backWhenShieldDown: 0
   target: {fileID: 0}
-  backDistance: 3
+  backPercentage: 0.6
   yFree: 0
   formationX: 0
 --- !u!114 &114985557854823200
@@ -535,7 +538,7 @@ MonoBehaviour:
   hpMax: 1000
   hpBar: {fileID: 0}
   barDistance: 0.65
-  noBar: 0
+  hideBarOnScale: 0
 --- !u!114 &114999244455772868
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -799,7 +802,7 @@ ParticleSystem:
     startSize:
       serializedVersion: 2
       minMaxState: 0
-      scalar: 0.45
+      scalar: 0.6
       minScalar: 1
       maxCurve:
         serializedVersion: 2
@@ -5433,7 +5436,7 @@ ParticleSystem:
     startSpeed:
       serializedVersion: 2
       minMaxState: 0
-      scalar: -0.25
+      scalar: -0.3
       minScalar: 5
       maxCurve:
         serializedVersion: 2
@@ -5549,7 +5552,7 @@ ParticleSystem:
     startSize:
       serializedVersion: 2
       minMaxState: 0
-      scalar: 0.15
+      scalar: 0.1
       minScalar: 1
       maxCurve:
         serializedVersion: 2
@@ -5953,7 +5956,7 @@ ParticleSystem:
     sphericalDirectionAmount: 0
     randomPositionAmount: 0
     radius:
-      value: 0.15
+      value: 0.2
       mode: 0
       spread: 0
       speed:
@@ -10080,7 +10083,7 @@ ParticleSystem:
     startSize:
       serializedVersion: 2
       minMaxState: 0
-      scalar: 0.75
+      scalar: 1
       minScalar: 1
       maxCurve:
         serializedVersion: 2
@@ -14677,7 +14680,7 @@ ParticleSystem:
     startSize:
       serializedVersion: 2
       minMaxState: 0
-      scalar: 1.2
+      scalar: 1.5
       minScalar: 1
       maxCurve:
         serializedVersion: 2
@@ -19274,8 +19277,8 @@ ParticleSystem:
     startSize:
       serializedVersion: 2
       minMaxState: 3
-      scalar: 0.45
-      minScalar: 0.35
+      scalar: 1
+      minScalar: 0.9
       maxCurve:
         serializedVersion: 2
         m_Curve:
@@ -19327,8 +19330,8 @@ ParticleSystem:
     startSizeY:
       serializedVersion: 2
       minMaxState: 3
-      scalar: 0.65
-      minScalar: 0.5
+      scalar: 1.3
+      minScalar: 1.1
       maxCurve:
         serializedVersion: 2
         m_Curve:

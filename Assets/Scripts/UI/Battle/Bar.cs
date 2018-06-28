@@ -6,9 +6,11 @@ public class Bar : UI {
 
 	Hitpoint hitpoint;
 
+	public float minLength,maxLength,growthScale;
 	public void InitBar(Hitpoint _hitpoint){
 		hitpoint = _hitpoint;
-		rt.sizeDelta = new Vector2 (Mathf.Clamp(10f + hitpoint.hp * 0.25f, 10f, 100f) , 1.75f);
+		rt.sizeDelta = new Vector2 (Mathf.Clamp(hitpoint.hp * growthScale, minLength, maxLength) , 1.75f);
+		gameObject.SetActive (false);
 	}
 
 	void Update(){
@@ -46,8 +48,13 @@ public class Bar : UI {
 	}
 
 	public void WakeBar(){
+		Position ();
 		gameObject.SetActive (true);
 		nextHide = time + 3f;
+	}
+
+	public void Reset(){
+		image.fillAmount = 1f;
 	}
 
 }
