@@ -62,7 +62,7 @@ public class Repair : Laser {
 	protected override void ShootLaser(){
 		if (Vector3.Distance (transform.position, target.transform.position) <= (range + bonusRange)) {
 			laserLine.SetLine (transform.position, new Vector3(target.transform.position.x + randomize,target.transform.position.y + randomize, 0f));
-			target.BroadcastMessage ("Repaired", repairValue);
+			target.SendMessage ("Repaired", repairValue);
 		}
 	}
 }

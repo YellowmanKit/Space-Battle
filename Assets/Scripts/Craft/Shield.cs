@@ -12,6 +12,7 @@ public class Shield : Alpha {
 	}
 
 	void Prewarm(){
+		
 	}
 
 	void Recharge(){
@@ -57,4 +58,9 @@ public class Shield : Alpha {
 	}
 
 	public bool isDown { get { return shieldHp <= 0; } }
+
+	public void HittedByEMP(float empStrength){
+
+	}
+
 }

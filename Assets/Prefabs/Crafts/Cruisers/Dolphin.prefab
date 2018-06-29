@@ -173,7 +173,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1711331571435592}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -0.57, y: 0.369, z: 0}
+  m_LocalPosition: {x: -0.96, y: 2.023, z: 0}
   m_LocalScale: {x: 0.1, y: 0.11, z: 1}
   m_Children:
   - {fileID: 4386531896001076}
@@ -433,7 +433,7 @@ MonoBehaviour:
   hp: 0
   hpMax: 50
   hpBar: {fileID: 0}
-  barDistance: 0.25
+  barDistance: 0.35
   hideBarOnScale: 0
 --- !u!114 &114963730556638528
 MonoBehaviour:
@@ -446,6 +446,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1fd5cfa6ce4d91c46baf5d1d890174aa, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  alphaRate: 0
   craftClass: 2
   craftName: 7
   destroyed: 0
@@ -461,6 +462,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 56889213a655e1b499a0c66dd1ca14ea, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  alphaRate: 0
   shieldHp: 0
   shieldHpMax: 250
 --- !u!198 &198298064395696752

@@ -9,7 +9,7 @@ public enum PoolType {
 }
 
 public enum CraftName {
-	Wasp,
+	Virus,
 	Bee,
 	Beatle,
 	Bat,
@@ -17,7 +17,6 @@ public enum CraftName {
 	Eagle,
 	Eel,
 	Dolphin,
-	Shark,
 	HumpbackWhale,
 	BlueWhale
 }

@@ -35,4 +35,9 @@ public abstract class Ability : Ref {
 		}
 	}
 
+	/*public void HittedByEMP(float empStrength){
+		//Debug.Log ("Hitted by emp");
+		nextUse = nextUse + empStrength;
+	}*/
+
 }

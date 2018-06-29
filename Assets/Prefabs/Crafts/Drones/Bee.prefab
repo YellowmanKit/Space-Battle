@@ -206,6 +206,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1fd5cfa6ce4d91c46baf5d1d890174aa, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  alphaRate: 0
   craftClass: 0
   craftName: 1
   destroyed: 0
@@ -224,7 +225,7 @@ MonoBehaviour:
   hp: 0
   hpMax: 5
   hpBar: {fileID: 0}
-  barDistance: 0.035
+  barDistance: 0.025
   hideBarOnScale: 0.3
 --- !u!114 &114785039798296296
 MonoBehaviour:

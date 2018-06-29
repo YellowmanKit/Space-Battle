@@ -140,12 +140,12 @@ Transform:
   m_Children:
   - {fileID: 1574468316}
   - {fileID: 1244987683}
+  - {fileID: 1964902861}
   - {fileID: 361311906}
   - {fileID: 1839784744}
   - {fileID: 2059335533}
   - {fileID: 1991845102}
   - {fileID: 2091836473}
-  - {fileID: 356665772}
   - {fileID: 1943892560}
   - {fileID: 1208451809}
   m_Father: {fileID: 1875181617}
@@ -350,7 +350,7 @@ RectTransform:
   m_Children:
   - {fileID: 287146132}
   m_Father: {fileID: 0}
-  m_RootOrder: 2
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
@@ -513,6 +513,7 @@ Transform:
   - {fileID: 74342856}
   - {fileID: 696556754}
   - {fileID: 1480350286}
+  - {fileID: 1893892852}
   m_Father: {fileID: 1875181617}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -778,57 +779,6 @@ RectTransform:
   m_PrefabParentObject: {fileID: 224576523550154056, guid: b1b0f6ffa4d177b4fa56e45cb4243349,
     type: 2}
   m_PrefabInternal: {fileID: 658920630}
---- !u!1 &356665771
-GameObject:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  serializedVersion: 5
-  m_Component:
-  - component: {fileID: 356665772}
-  - component: {fileID: 356665773}
-  m_Layer: 0
-  m_Name: Shark
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 0
---- !u!4 &356665772
-Transform:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 356665771}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
-  m_Father: {fileID: 7746310}
-  m_RootOrder: 7
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &356665773
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 356665771}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b71848a8b93c0be47809276ef3fcfdc8, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  craftClass: 2
-  craftType: 1
-  sprite: {fileID: 21300000, guid: 91da392daefcf7845b97d31ddaa45e1e, type: 3}
-  craftName: 7
-  description: More advanced attack unit with the ability to duel aoe damage
-  cost: 125
-  unlockCost: 300
-  locked: 1
-  playerOnly: 0
-  enemyOnly: 0
-  prefab: {fileID: 0}
 --- !u!1 &361311905
 GameObject:
   m_ObjectHideFlags: 0
@@ -856,7 +806,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 7746310}
-  m_RootOrder: 2
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &361311907
 MonoBehaviour:
@@ -1542,7 +1492,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a74b34a8f57997c4dabbda2ff6cc9cc1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  credits: 10000000
+  credits: 1000000
   craftMax: 200
 --- !u!4 &971068073
 Transform:
@@ -1713,7 +1663,7 @@ Transform:
   - {fileID: 671543136}
   - {fileID: 1728559647}
   m_Father: {fileID: 0}
-  m_RootOrder: 0
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1148264871
 GameObject:
@@ -1816,9 +1766,9 @@ MonoBehaviour:
   craftClass: 3
   craftType: 0
   sprite: {fileID: 21300000, guid: 959d5276c75667e4ca7c932a3db45ae1, type: 3}
-  craftName: 10
+  craftName: 9
   description: Ultimate defense unit with the greatest durability
-  cost: 1000
+  cost: 5000
   unlockCost: 0
   locked: 0
   playerOnly: 0
@@ -3010,7 +2960,7 @@ RectTransform:
   m_Children:
   - {fileID: 1661313782}
   m_Father: {fileID: 0}
-  m_RootOrder: 1
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
@@ -3044,7 +2994,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 7746310}
-  m_RootOrder: 3
+  m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &1839784745
 MonoBehaviour:
@@ -7880,6 +7830,46 @@ MonoBehaviour:
   m_FlexibleWidth: -1
   m_FlexibleHeight: 1
   m_LayoutPriority: 1
+--- !u!1 &1893892851
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 5
+  m_Component:
+  - component: {fileID: 1893892852}
+  - component: {fileID: 1893892853}
+  m_Layer: 0
+  m_Name: Helper
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1893892852
+Transform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1893892851}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 213807048}
+  m_RootOrder: 3
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1893892853
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1893892851}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 883171664721dfc41b4923150f26d270, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1943892559
 GameObject:
   m_ObjectHideFlags: 0
@@ -7923,7 +7913,7 @@ MonoBehaviour:
   craftClass: 3
   craftType: 0
   sprite: {fileID: 21300000, guid: 643cc9e819eb0c3499b8d9b976c482be, type: 3}
-  craftName: 9
+  craftName: 8
   description: Ultimate attack unit with the greatest firepower
   cost: 5000
   unlockCost: 0
@@ -7959,6 +7949,57 @@ Transform:
   m_Father: {fileID: 224538551}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1964902860
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 5
+  m_Component:
+  - component: {fileID: 1964902861}
+  - component: {fileID: 1964902862}
+  m_Layer: 0
+  m_Name: Virus
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1964902861
+Transform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1964902860}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 7746310}
+  m_RootOrder: 2
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1964902862
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1964902860}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b71848a8b93c0be47809276ef3fcfdc8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  craftClass: 0
+  craftType: 0
+  sprite: {fileID: 21300000, guid: fd3c53368ab955b4cb975339ae3c831f, type: 3}
+  craftName: 0
+  description: Special attack unit with the ability to hack enemy drones.
+  cost: 15
+  unlockCost: 0
+  locked: 0
+  playerOnly: 0
+  enemyOnly: 0
+  prefab: {fileID: 1408534953602410, guid: 45dd731096a78d04e85411a6f337af9a, type: 2}
 --- !u!1 &1986421740
 GameObject:
   m_ObjectHideFlags: 0
@@ -8021,7 +8062,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 7746310}
-  m_RootOrder: 5
+  m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &1991845103
 MonoBehaviour:
@@ -8072,7 +8113,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 7746310}
-  m_RootOrder: 4
+  m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &2059335534
 MonoBehaviour:
@@ -8123,7 +8164,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 7746310}
-  m_RootOrder: 6
+  m_RootOrder: 7
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &2091836474
 MonoBehaviour:

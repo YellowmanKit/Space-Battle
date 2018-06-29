@@ -45,7 +45,7 @@ public class Intercept : Laser {
 
 	protected override void ShootLaser(){
 		laserLine.SetLine (transform.position, target.transform.position);
-		target.BroadcastMessage ("Intercepted");
+		target.SendMessage ("Intercepted");
 		targetList.Remove (target);
 	}
 

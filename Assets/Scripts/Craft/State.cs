@@ -64,5 +64,4 @@ public class State : Alpha {
 			psMain.startRotation = (isPlayer? 0f:180f) * Mathf.Deg2Rad;
 		}
 	}
-
 }

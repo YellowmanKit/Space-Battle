@@ -67,6 +67,7 @@
      <Compile Include="Assets\Scripts\Craft\Ability\Beam.cs" />
      <Compile Include="Assets\Scripts\Craft\Ability\Effect\Line.cs" />
      <Compile Include="Assets\Scripts\Craft\Ability\Effect\Particle.cs" />
+     <Compile Include="Assets\Scripts\Craft\Ability\Laser\Hack.cs" />
      <Compile Include="Assets\Scripts\Craft\Ability\Laser\Intercept.cs" />
      <Compile Include="Assets\Scripts\Craft\Ability\Laser\Laser.cs" />
      <Compile Include="Assets\Scripts\Craft\Ability\Laser\Repair.cs" />
@@ -74,7 +75,8 @@
      <Compile Include="Assets\Scripts\Craft\Ability\Projectile\Missile.cs" />
      <Compile Include="Assets\Scripts\Craft\Ability\Projectile\Projectile.cs" />
      <Compile Include="Assets\Scripts\Craft\Ability\ProjectileLauncher.cs" />
-     <Compile Include="Assets\Scripts\Craft\Ability\Pulse.cs" />
+     <Compile Include="Assets\Scripts\Craft\Ability\Pulse\EMP.cs" />
+     <Compile Include="Assets\Scripts\Craft\Ability\Pulse\Pulse.cs" />
      <Compile Include="Assets\Scripts\Craft\Alpha.cs" />
      <Compile Include="Assets\Scripts\Craft\Behaviour\Behav.cs" />
      <Compile Include="Assets\Scripts\Craft\Behaviour\Pilot.cs" />
@@ -86,6 +88,7 @@
      <Compile Include="Assets\Scripts\Craft\State.cs" />
      <Compile Include="Assets\Scripts\Custom\CustomCamera.cs" />
      <Compile Include="Assets\Scripts\Custom\CustomInput.cs" />
+     <Compile Include="Assets\Scripts\Helper.cs" />
      <Compile Include="Assets\Scripts\Ref.cs" />
      <Compile Include="Assets\Scripts\UI\Battle\Bar.cs" />
      <Compile Include="Assets\Scripts\UI\Battle\BattleUI.cs" />

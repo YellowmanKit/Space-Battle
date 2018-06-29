@@ -11,6 +11,7 @@ public class Missile : Projectile {
 	public void Init(object[] vars){
 		InitProjectile ((bool)vars[0]);
 		SetMissile (false);
+		reached = false;
 
 		tr.time = deadTime;
 		rb.velocity = transform.up * initSpeed;
@@ -43,15 +44,17 @@ public class Missile : Projectile {
 		Destruction ();
 	}
 
+	bool reached;
 	void CheckIfReachedDestinatione(){
-		if (Vector2.Distance (transform.position, move.destination) <= 0.1f && !exploded) {
+		if (Vector2.Distance (transform.position, move.destination) <= 0.1f && !exploded && !reached) {
 			SpawnOnHitEffect ();
 			SetMissile (true);
+			reached = true;
 		}
 	}
 
 	void Destruction(){
-		if (time > destructTime) {
+		if (time > destructTime && !reached && !exploded) {
 			SpawnOnHitEffect ();
 			SetMissile (true);
 			destructTime = float.MaxValue;
@@ -69,7 +72,7 @@ public class Missile : Projectile {
 
 	void CheckHit(Collider2D other){
 		if (OnHit (other)) {
-			if (!exploded) {
+			if (!exploded && !reached) {
 				SpawnOnHitEffect ();
 				SetMissile (true);
 			} else {
@@ -89,6 +92,10 @@ public class Missile : Projectile {
 	}
 
 	public void Intercepted(){
+		if (exploded) {
+			return;
+		}
+		//Debug.Log ("Intercepted");
 		SpawnOnHitEffect ();
 		SetMissile (true);
 		circleCollider.enabled = false;

@@ -129,7 +129,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1757168745407264}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -0.185, y: 0.181, z: 0}
+  m_LocalPosition: {x: -0.529, y: 2.016, z: 0}
   m_LocalScale: {x: 0.15, y: 0.19, z: 1}
   m_Children:
   - {fileID: 4420318841257014}
@@ -183,6 +183,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1fd5cfa6ce4d91c46baf5d1d890174aa, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  alphaRate: 0
   craftClass: 2
   craftName: 6
   destroyed: 0
@@ -205,7 +206,6 @@ MonoBehaviour:
   destination: {x: 0, y: 0}
   mLock: 0
   isMissile: 0
-  rotateByMovement: 0
 --- !u!114 &114487122524030340
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -231,7 +231,7 @@ MonoBehaviour:
   hp: 0
   hpMax: 125
   hpBar: {fileID: 0}
-  barDistance: 0.175
+  barDistance: 0.3
   hideBarOnScale: 0
 --- !u!114 &114953848676177944
 MonoBehaviour:
